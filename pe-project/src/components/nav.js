@@ -90,7 +90,7 @@ const useStyles = makeStyles(theme => ({
 
 	navElements: {
 		minWidth: '0px',
-		margin: '0 2vw',
+		margin: '0 0.5vw',
 		fontSize: '1rem',
 		'&:hover': {
 			transform: 'scale(1.25)',
@@ -175,9 +175,13 @@ function NavTabs({ classes }) {
 		<>
 			<Tab label='Home' href='/' className={classes} />
 
-			<Tab label='Videos' href='/' className={classes} />
+			<Tab label='Soccer' href='/' className={classes} />
 
-			<Tab label='Articles' href='/' className={classes} />
+			<Tab label='Basketball' href='/' className={classes} />
+
+			<Tab label='Football' href='/' className={classes} />
+
+			<Tab label='Strength Training' href='/' className={classes} />
 
 			<Tab label='About' href='/' className={classes} />
 		</>
