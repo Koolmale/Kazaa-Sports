@@ -11,18 +11,41 @@ import MenuIcon from '@material-ui/icons/Menu'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import CloseIcon from '@material-ui/icons/Close'
 import logo from '../assets/logo.png'
+import { createMuiTheme } from '@material-ui/core/styles'
+import { ThemeProvider } from '@material-ui/styles'
+import '../styles/nav.css'
+
+const theme = createMuiTheme({
+	palette: {
+		primary: {
+			// main: '#0D5C63',
+			main: '#53A548',
+			// dark: will be calculated from palette.primary.main,
+			// contrastText: will be calculated to contrast with palette.primary.main
+		},
+		secondary: {
+			light: '#0066ff',
+			main: '#0044ff',
+			contrastText: '#ffcc00',
+		},
+	},
+})
 
 const useStyles = makeStyles(theme => ({
 	root: {
 		flexGrow: 1,
 	},
+
+	tabs: {
+		backgroundColor: '#53A548',
+	},
 	menuButton: {
 		marginRight: theme.spacing(2),
 	},
+
 	search: {
-        position: 'absolute',
-        right: '2vw',
-        // justifySelf: 'flex-end',
+		position: 'absolute',
+		right: '2vw',
 		borderRadius: theme.shape.borderRadius,
 		backgroundColor: fade(theme.palette.common.white, 0.15),
 		'&:hover': {
@@ -86,6 +109,7 @@ const useStyles = makeStyles(theme => ({
 
 	hidden: {
 		display: 'none',
+		
 	},
 }))
 
@@ -96,31 +120,32 @@ function Nav(props) {
 
 	return (
 		<div>
-			<div className={classes.root}>
-				<AppBar position='fixed' color='primary' id='nav'>
-					<Toolbar>
-						{screen_size_small && (
-							<IconButton
-								edge='start'
-								className={classes.menuButton}
-								color='inherit'
-								aria-label='open drawer'
-								onClick={() =>
-									setClicked(prevClicked => !prevClicked)
-								}
-							>
-								{clicked ? <CloseIcon /> : <MenuIcon />}
-							</IconButton>
-						)}
-						<img src={logo} id='logo' alt='logo' />
+			<ThemeProvider theme={theme}>
+				<div className={classes.root}>
+					<AppBar position='relative' color='primary'>
+						<Toolbar>
+							{screen_size_small && (
+								<IconButton
+									edge='start'
+									className={classes.menuButton}
+									color='inherit'
+									aria-label='open drawer'
+									onClick={() =>
+										setClicked(prevClicked => !prevClicked)
+									}
+								>
+									{clicked ? <CloseIcon /> : <MenuIcon />}
+								</IconButton>
+							)}
+							<img src={logo} id='logo' alt='logo' />
 
-						<div id='title'>Kazaa Sports</div>
+							<div id='title'>Kazaa Sports</div>
 
-						{screen_size_small || (
-							<Tabs value={false}>
-								<NavTabs classes={classes.navElements} />
-							</Tabs>
-						)}
+							{screen_size_small || (
+								<Tabs value={false}>
+									<NavTabs classes={classes.navElements} />
+								</Tabs>
+							)}
 
 							<div className={classes.search}>
 								<div className={classes.searchIcon}>
@@ -136,11 +161,11 @@ function Nav(props) {
 									style={{ fontSize: '1.5vw' }}
 								/>
 							</div>
-						
-					</Toolbar>
-				</AppBar>
-			</div>
-			{screen_size_small && <MobileNav clicked={clicked} />}
+						</Toolbar>
+					</AppBar>
+				</div>
+				{screen_size_small && clicked && <MobileNav clicked={clicked} />}
+			</ThemeProvider>
 		</div>
 	)
 }
@@ -159,12 +184,12 @@ function NavTabs({ classes }) {
 	)
 }
 
-function MobileNav({ clicked }) {
+function MobileNav({clicked}) {
 	const classes = useStyles()
 
 	return (
 		<div id={clicked ? 'mobile-nav' : 'mobile-nav mobile-nav-unclicked'}>
-			<Tabs orientation='vertical' value={false}>
+			<Tabs orientation='vertical' value={false} className = {classes.tabs}>
 				<NavTabs
 					classes={
 						clicked ? classes.mobileNavElements : classes.hidden
