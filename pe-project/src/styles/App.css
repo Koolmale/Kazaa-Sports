@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+#logo {
+    height: 10vh;
+}
+
+#title {
+    margin: 2vw;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#tabs {
+    position: absolute;
+    right: 0px
+}
