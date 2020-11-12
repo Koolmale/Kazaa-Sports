@@ -1,9 +1,10 @@
-import './App.css';
+import './styles/App.css';
+import Home from './pages/home'
 
 function App() {
   return (
     <div className="App">
-      whats up slime
+      <Home/>
     </div>
   )
 }
