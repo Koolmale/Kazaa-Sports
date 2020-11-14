@@ -1,0 +1,57 @@
+#strength-training {
+    margin: 0 auto;
+    width: 60vw;
+
+}
+
+
+
+.title {
+    font-size: 2.1875rem;
+    line-height: 1;
+    margin-bottom: .9375rem;
+    letter-spacing: -.05rem;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: 8vh;
+}
+
+.title:hover, .subtitle:hover {
+    color: #cc7f0c;
+    transition: all 0.5s ease;
+}
+
+
+
+.paragraphs {
+    margin: 5vh 10vw;
+    text-indent: 2vw;
+}
+
+.body-ul li{
+    margin: 5vh 10vw;
+}
+
+
+.body-link {
+    text-decoration: none;
+    color: #f53b0a;
+    border-bottom: .0625rem solid #f53b0a;
+    padding-top: .05rem;
+    padding-bottom: .05rem;
+    transition: all .4s ease-in-out,color .4s ease-in-out;    
+}
+
+.body-link:hover {
+    background: linear-gradient(to bottom,#feebe7 0,#feebe7 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    color: #c42f08;
+    background-size: .625rem 3.125rem;
+}

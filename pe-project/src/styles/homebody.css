@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap');
+
+
+#section1{
+	background-image: url(../assets/logo.png);
+	background-repeat: no-repeat;
+	background-size: 30vh 30vh;
+	background-position-y: center;
+	background-position-x: 10%;
+	background-color: #53a54881;
+	text-align: center;
+	margin-top: -7vh;
+	height: 40vh;
+	font-size: 5vh;
+	display: flex;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Bebas Neue', cursive;
+}
+
+#section2 {
+	background-image: url('https://wallpapercave.com/wp/4dqP3rn.jpg');
+	height: 50vh;
+
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	/* background-repeat: no-repeat;
+	background-position-x: right;
+	background-size: cover;
+	background-position-y: center;
+	height: 50vh; */
+	font-size: 5vh;
+	display: block;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-top: -8vh;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+}
+
+#section2 h2 {
+	padding-top: 10vh;
+}
+
+.button {
+	height: 10vh;
+	width: 15vw;
+	font-size: 4vh;
+}
+
+#section3 {
+	background-image: url('https://res.cloudinary.com/grohealth/image/upload/f_auto,fl_lossy,q_auto/v1581678662/DCUK/Content/iStock-959080376.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background-repeat: cover;*/
+	background-position-x: 10%; 
+	background-position-y: -40%;
+	height: 60vh;
+	font-size: 5vh;
+	display: flex;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+}
+
+#section4 {
+	background-image: url(https://d2wkegjj8g6j4.cloudfront.net/images/categories/campaign_images/000/000/050/original/Football.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background-repeat: cover;*/
+	background-position-x: 10%; 
+	background-position-y: -40%;
+	height: 50vh;
+	font-size: 5vh;
+	display: flex;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+}
+
+#section5 {
+	background-image: url(https://www.copemanhealthcare.com/wp-content/uploads/2018/05/Strength-fb.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background-repeat: cover;*/
+	background-position-x: 10%; 
+	height: 50vh;
+	font-size: 5vh;
+	display: flex;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+}

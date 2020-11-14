@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+}
+
+#logo {
+	height: 12vh;
+}
+
+#title {
+	margin: 2vw;
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+
+#section1 {
+	z-index: 100;
+}
+
+#nav {
+	height: '50vw'
+}
