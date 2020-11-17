@@ -37,12 +37,11 @@
 }
 
 
-.videos {
+.st-videos {
 	display: flex;
 	flex-direction: column;
 }
 
-.video {
+.st-video {
 	margin: 5vh 0;
-
 }
