@@ -1,13 +1,19 @@
 import React from 'react'
+import Videos from '../components/strength_training_videos'
 import '../styles/strength_training.css'
 
 function StrengthTraning() {
-    return (
-		<div id = 'strength-training'>
-			<h1 className='title'>Strength Training 101: How to Get Started</h1>
+	return (
+		<div id='strength-training'>
+			
+			<Videos width = '50vw' height = '28.125vw' />
 
-			<div className='paragraphs-container'>
-				<p className='paragraphs'>
+			<h1 className='st-title'>
+				Strength Training 101: How to Get Started
+			</h1>
+
+			<div className='st-paragraphs-container'>
+				<p className='st-paragraphs'>
 					If you want to kick your fitness routine up a notch,
 					consider giving the treadmill a break and showing the loaded
 					barbells some love. You’ll still sweat those calories off
@@ -18,7 +24,7 @@ function StrengthTraning() {
 					to build muscle mass, strength, and endurance.
 				</p>
 
-				<p className='paragraphs'>
+				<p className='st-paragraphs'>
 					If you’re new to the weight room, getting started might seem
 					a little intimidating, but implementing strength training
 					into your fitness routine doesn’t mean you have to
@@ -28,7 +34,7 @@ function StrengthTraning() {
 					you adapt, you can increase your frequency of training.”
 				</p>
 
-				<p className='paragraphs'>
+				<p className='st-paragraphs'>
 					It usually takes a few weeks to start seeing results, but
 					strength training is a sure way to build rock-solid abs,
 					load up on your booty gains, or seriously sculpt that part
@@ -39,11 +45,11 @@ function StrengthTraning() {
 					strength training for those ready to get started.
 				</p>
 
-				<h2 className='subtitle'>
+				<h2 className='st-subtitle'>
 					Different Types Of Strength Training
 				</h2>
 
-				<ul class='body-ul'>
+				<ul class='st-body-ul'>
 					<li>
 						<strong>Muscle Endurance Training: </strong>Revenig
 						recommends beginners start by lifting a higher volume,
@@ -56,7 +62,7 @@ function StrengthTraning() {
 					<li>
 						<strong>Circuit Training: </strong>
 						<a
-							class='body-link'
+							class='link'
 							href='https://www.womenshealthmag.com/fitness/a29857553/circuit-training/'
 							target='_blank'
 							rel='noreferrer'
@@ -79,7 +85,7 @@ function StrengthTraning() {
 						size of your muscles too...but only if you're doing a
 						type of strength training called{' '}
 						<a
-							class='body-link'
+							className='link'
 							href='https://www.womenshealthmag.com/fitness/a29514236/what-is-hypertrophy/'
 							target='_blank'
 							rel='noreferrer'
@@ -111,6 +117,3 @@ function StrengthTraning() {
 	)
 }
 export default StrengthTraning
-
-
-

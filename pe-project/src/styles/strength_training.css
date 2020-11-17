@@ -1,13 +1,17 @@
 #strength-training {
-    margin: 0 auto;
-    width: 60vw;
+    margin: 5vh auto;
+	width: 70vw;
+	display: flex;
+	flex-direction: column;
 
 }
 
+#strength-training div {
+	align-self: center;
+}
 
-
-.title {
-    font-size: 2.1875rem;
+.st-title {
+    font-size: 3rem;
     line-height: 1;
     margin-bottom: .9375rem;
     letter-spacing: -.05rem;
@@ -17,41 +21,28 @@
 
 }
 
-.subtitle {
+.st-subtitle {
     text-align: center;
     margin-top: 8vh;
 }
 
-.title:hover, .subtitle:hover {
-    color: #cc7f0c;
-    transition: all 0.5s ease;
-}
 
-
-
-.paragraphs {
+.st-paragraphs {
     margin: 5vh 10vw;
     text-indent: 2vw;
 }
 
-.body-ul li{
+.st-body-ul li{
     margin: 5vh 10vw;
 }
 
 
-.body-link {
-    text-decoration: none;
-    color: #f53b0a;
-    border-bottom: .0625rem solid #f53b0a;
-    padding-top: .05rem;
-    padding-bottom: .05rem;
-    transition: all .4s ease-in-out,color .4s ease-in-out;    
+.videos {
+	display: flex;
+	flex-direction: column;
 }
 
-.body-link:hover {
-    background: linear-gradient(to bottom,#feebe7 0,#feebe7 100%);
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    color: #c42f08;
-    background-size: .625rem 3.125rem;
+.video {
+	margin: 5vh 0;
+
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar } from '@material-ui/core'
+import { AppBar, MenuItem } from '@material-ui/core'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import SearchIcon from '@material-ui/icons/Search'
@@ -11,25 +11,8 @@ import MenuIcon from '@material-ui/icons/Menu'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import CloseIcon from '@material-ui/icons/Close'
 import logo from '../assets/logo.png'
-import { createMuiTheme } from '@material-ui/core/styles'
-import { ThemeProvider } from '@material-ui/styles'
-import '../styles/nav.css'
-
-const theme = createMuiTheme({
-	palette: {
-		primary: {
-			// main: '#0D5C63',
-			main: '#53A548',
-			// dark: will be calculated from palette.primary.main,
-			// contrastText: will be calculated to contrast with palette.primary.main
-		},
-		secondary: {
-			light: '#0066ff',
-			main: '#0044ff',
-			contrastText: '#ffcc00',
-		},
-	},
-})
+import { withStyles } from '@material-ui/core/styles'
+import Menu from '@material-ui/core/Menu'
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -91,116 +74,210 @@ const useStyles = makeStyles(theme => ({
 	navElements: {
 		minWidth: '0px',
 		margin: '0 0.5vw',
-		fontSize: '1rem',
+		color: '#fff',
+		fontSize: '1.75rem',
 		'&:hover': {
-			transform: 'scale(1.25)',
-			transition: 'all 0.25s ease',
-		},
-	},
-
-	mobileNavElements: {
-		margin: '0vh auto',
-		padding: '2vh 0px',
-		'&:hover': {
-			transform: 'scale(1.25)',
-			transition: 'all 0.25s ease',
+			color: '#830885',
+			transition: 'all .5s ease',
 		},
 	},
 
 	hidden: {
 		display: 'none',
-		
+	},
+
+	tabsContainer: {
+		margin: '0 15%',
 	},
 }))
 
 function Nav(props) {
 	const classes = useStyles()
-	const screen_size_small = useMediaQuery('(max-width: 1159px)')
+	const screen_size_medium = useMediaQuery('(max-width: 1159px)')
+	const screen_size_small = useMediaQuery('(max-width: 720px)')
 	const [clicked, setClicked] = React.useState(false)
+	const navRef = React.useRef(null)
 
 	return (
-		<div>
-			<ThemeProvider theme={theme}>
-				<div className={classes.root}>
-					<AppBar position='relative' color='primary'>
-						<Toolbar>
-							{screen_size_small && (
-								<IconButton
-									edge='start'
-									className={classes.menuButton}
-									color='inherit'
-									aria-label='open drawer'
-									onClick={() =>
-										setClicked(prevClicked => !prevClicked)
-									}
-								>
-									{clicked ? <CloseIcon /> : <MenuIcon />}
-								</IconButton>
-							)}
-							<img src={logo} id='logo' alt='logo' />
+		<nav>
+			<div className={classes.root}>
+				<AppBar position='relative' color='primary' ref={navRef}>
+					<Toolbar>
+						{screen_size_medium && (
+							<IconButton
+								edge='start'
+								className={classes.menuButton}
+								color='inherit'
+								aria-label='open drawer'
+								onClick={() =>
+									setClicked(prevClicked => !prevClicked)
+								}
+							>
+								{clicked ? (
+									<CloseIcon style={{ fontSize: '3rem' }} />
+								) : (
+									<MenuIcon style={{ fontSize: '3rem' }} />
+								)}
+							</IconButton>
+						)}
+						<img src={logo} id='logo' alt='logo' />
 
-							<div id='title'>Kazaa Sports</div>
+						<div id='title'>Kazaa Sports</div>
 
-							{screen_size_small || (
-								<Tabs value={false}>
-									<NavTabs classes={classes.navElements} />
-								</Tabs>
-							)}
+						{screen_size_medium || (
+							<Tabs
+								value={false}
+								variant='fullWidth'
+								className={classes.tabsContainer}
+							>
+								<NavTabs className={classes.navElements} />
+							</Tabs>
+						)}
+						{screen_size_small || <Search classes={classes} />}
+					</Toolbar>
+				</AppBar>
+			</div>
+			{screen_size_medium && (
+				<MobileNav
+					clicked={clicked}
+					handleClose={() => setClicked(false)}
+					navRef={navRef}
+					classes={classes}
+					show_search={screen_size_small}
+				/>
+			)}
+		</nav>
+	)
+}
 
-							<div className={classes.search}>
-								<div className={classes.searchIcon}>
-									<SearchIcon />
-								</div>
-								<InputBase
-									placeholder='Search…'
-									classes={{
-										root: classes.inputRoot,
-										input: classes.inputInput,
-									}}
-									inputProps={{ 'aria-label': 'search' }}
-									style={{ fontSize: '1.5vw' }}
-								/>
-							</div>
-						</Toolbar>
-					</AppBar>
-				</div>
-				{screen_size_small && clicked && <MobileNav clicked={clicked} />}
-			</ThemeProvider>
+const StyledMenu = withStyles({
+	paper: {
+		border: '1px solid #d3d4d5',
+		backgroundColor: '#53A548',
+	},
+})(props => (
+	<Menu
+		elevation={0}
+		getContentAnchorEl={null}
+		anchorOrigin={{
+			vertical: 'bottom',
+			horizontal: 'center',
+		}}
+		transformOrigin={{
+			vertical: 'top',
+			horizontal: 'center',
+		}}
+		{...props}
+	/>
+))
+
+const StyledMenuItem = withStyles(theme => ({
+	root: {
+		'&:focus': {
+			backgroundColor: theme.palette.primary.main,
+			'& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+				color: theme.palette.common.white,
+			},
+		},
+	},
+}))(MenuItem)
+
+function Search({ classes }) {
+	return (
+		<div className={classes.search}>
+			<div className={classes.searchIcon}>
+				<SearchIcon />
+			</div>
+			<InputBase
+				placeholder='Search…'
+				classes={{
+					root: classes.inputRoot,
+					input: classes.inputInput,
+				}}
+				inputProps={{ 'aria-label': 'search' }}
+				style={{ fontSize: '1.5vw' }}
+			/>
 		</div>
 	)
 }
 
-function NavTabs({ classes }) {
+function NavTabs(props) {
+	const [anchorEl, setAnchorEl] = React.useState(null)
+
+	const handleClick = event => {
+		setAnchorEl(event.currentTarget)
+	}
+
+	const handleClose = () => {
+		setAnchorEl(null)
+	}
 	return (
 		<>
-			<Tab label='Home' href='/' className={classes} />
+			<Tab {...props} label='Home' href='/' />
+			<Tab
+				{...props}
+				label='Sports'
+				aria-controls='customized-menu'
+				aria-haspopup='true'
+				variant='contained'
+				onClick={handleClick}
+			/>
+			<Tab {...props} label='About' href='/' />
+		
 
-			<Tab label='Soccer' href='/' className={classes} />
+			<StyledMenu
+				id='customized-menu'
+				anchorEl={anchorEl}
+				keepMounted
+				open={Boolean(anchorEl)}
+				onClose={handleClose}
+				variant='menu'
+			>
+				<Tabs orientation='vertical' variant='fullWidth' value={false}>
+					<StyledMenuItem>
+						<Tab {...props} label='Soccer' href='/' />
+					</StyledMenuItem>
 
-			<Tab label='Basketball' href='/' className={classes} />
+					<StyledMenuItem>
+						<Tab {...props} label='Football' href='/' />
+					</StyledMenuItem>
 
-			<Tab label='Football' href='/' className={classes} />
+					<StyledMenuItem>
+						<Tab {...props} label='Basketball' href='/' />
+					</StyledMenuItem>
 
-			<Tab label='Strength Training' href='/' className={classes} />
-
-			<Tab label='About' href='/' className={classes} />
+					<StyledMenuItem>
+						<Tab
+							{...props}
+							label='Strength Training'
+							href='/strength-training'
+						/>
+					</StyledMenuItem>
+				</Tabs>
+			</StyledMenu>
 		</>
 	)
 }
 
-function MobileNav({clicked}) {
-	const classes = useStyles()
-
+function MobileNav({ classes, clicked, handleClose, navRef, show_search }) {
 	return (
-		<div id={clicked ? 'mobile-nav' : 'mobile-nav mobile-nav-unclicked'}>
-			<Tabs orientation='vertical' value={false} className = {classes.tabs}>
-				<NavTabs
-					classes={
-						clicked ? classes.mobileNavElements : classes.hidden
-					}
-				/>
+		<StyledMenu
+			id='customized-menu'
+			anchorEl={navRef.current}
+			keepMounted
+			open={clicked}
+			onClose={handleClose}
+			variant='menu'
+		>
+			<Tabs
+				orientation='vertical'
+				variant='fullWidth'
+				style={{ width: '100vw' }}
+				value={false}
+			>
+				<NavTabs className={classes.navElements}/>
 			</Tabs>
-		</div>
+		</StyledMenu>
 	)
 }
 
