@@ -21,12 +21,12 @@ function App() {
 					<Switch>
 						<Route path='/' exact component={Home} />
 						<Route
-							path='/strength-training'
+							path='%PUBLIC_URL%/strength-training'
 							exact
 							component={StrengthTraining}
 						/>
 						<Route
-							path='/flag_football'
+							path='%PUBLIC_URL%/flag-football'
 							exact
 							component={FootballHome}
 						/>
