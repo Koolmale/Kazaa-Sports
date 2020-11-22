@@ -239,7 +239,7 @@ function NavTabs(props) {
 					</StyledMenuItem>
 
 					<StyledMenuItem>
-						<Tab {...props} label='Football' href='/' />
+						<Tab {...props} label='Football' href='/flag-football' />
 					</StyledMenuItem>
 
 					<StyledMenuItem>

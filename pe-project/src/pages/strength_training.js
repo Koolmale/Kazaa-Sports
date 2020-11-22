@@ -1,12 +1,30 @@
 import React from 'react'
 import Videos from '../components/strength_training_videos'
 import '../styles/strength_training.css'
+import { makeStyles } from '@material-ui/core/styles';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 
 function StrengthTraning() {
+
+	const useStyles = makeStyles((theme) => ({
+		root: {
+		  width: '20vw',
+		},
+		heading: {
+		  fontSize: theme.typography.pxToRem(15),
+		  fontWeight: theme.typography.fontWeightRegular,
+		},
+	  }));
+
+	  const classes = useStyles();
+
 	return (
 		<div id='strength-training'>
-			
-			<Videos width = '50vw' height = '28.125vw' />
 
 			<h1 className='st-title'>
 				Strength Training 101: How to Get Started
@@ -113,6 +131,8 @@ function StrengthTraning() {
 					</li>
 				</ul>
 			</div>
+
+			<Videos width = '50vw' height = '28.125vw' />
 		</div>
 	)
 }
