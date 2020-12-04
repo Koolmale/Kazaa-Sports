@@ -11,28 +11,28 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function StrengthTraning() {
 
-	const useStyles = makeStyles((theme) => ({
-		root: {
-		  width: '20vw',
-		},
-		heading: {
-		  fontSize: theme.typography.pxToRem(15),
-		  fontWeight: theme.typography.fontWeightRegular,
-		},
-	  }));
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      width: '20vw',
+    },
+    heading: {
+      fontSize: theme.typography.pxToRem(15),
+      fontWeight: theme.typography.fontWeightRegular,
+    },
+  }));
 
-	  const classes = useStyles();
+  const classes = useStyles();
 
-	return (
-		<div id='strength-training'>
+  return (
+    <div id='strength-training'>
 
-			<h1 className='st-title'>
-				Strength Training 101: How to Get Started
+      <h1 className='st-title'>
+        Strength Training 101: How to Get Started
 			</h1>
 
-			<div className='st-paragraphs-container'>
-				<p className='st-paragraphs'>
-					If you want to kick your fitness routine up a notch,
+      <div className='st-paragraphs-container'>
+        <p className='st-paragraphs'>
+          If you want to kick your fitness routine up a notch,
 					consider giving the treadmill a break and showing the loaded
 					barbells some love. You’ll still sweat those calories off
 					with the added benefit of toning your body. But what is
@@ -42,8 +42,8 @@ function StrengthTraning() {
 					to build muscle mass, strength, and endurance.
 				</p>
 
-				<p className='st-paragraphs'>
-					If you’re new to the weight room, getting started might seem
+        <p className='st-paragraphs'>
+          If you’re new to the weight room, getting started might seem
 					a little intimidating, but implementing strength training
 					into your fitness routine doesn’t mean you have to
 					completely say bye to your preferred workout. You can start
@@ -52,8 +52,8 @@ function StrengthTraning() {
 					you adapt, you can increase your frequency of training.”
 				</p>
 
-				<p className='st-paragraphs'>
-					It usually takes a few weeks to start seeing results, but
+        <p className='st-paragraphs'>
+          It usually takes a few weeks to start seeing results, but
 					strength training is a sure way to build rock-solid abs,
 					load up on your booty gains, or seriously sculpt that part
 					of your body you’ve been determined to tone up. It also
@@ -63,13 +63,13 @@ function StrengthTraning() {
 					strength training for those ready to get started.
 				</p>
 
-				<h2 className='st-subtitle'>
-					Different Types Of Strength Training
+        <h2 className='st-subtitle'>
+          Different Types Of Strength Training
 				</h2>
 
-				<ul class='st-body-ul'>
-					<li>
-						<strong>Muscle Endurance Training: </strong>Revenig
+        <ul class='st-body-ul'>
+          <li>
+            <strong>Muscle Endurance Training: </strong>Revenig
 						recommends beginners start by lifting a higher volume,
 						meaning more reps and sets, of lighter weights. "This
 						allows your tissues to build up tolerance for more
@@ -77,18 +77,18 @@ function StrengthTraning() {
 						expect to make progress when you constantly have to stop
 						because you're completely out of breath.”
 					</li>
-					<li>
-						<strong>Circuit Training: </strong>
-						<a
-							class='link'
-							href='https://www.womenshealthmag.com/fitness/a29857553/circuit-training/'
-							target='_blank'
-							rel='noreferrer'
-							data-vars-ga-outbound-link='https://www.womenshealthmag.com/fitness/a29857553/circuit-training/'
-						>
-							Circuit training
+          <li>
+            <strong>Circuit Training: </strong>
+            <a
+              class='link'
+              href='https://www.womenshealthmag.com/fitness/a29857553/circuit-training/'
+              target='_blank'
+              rel='noreferrer'
+              data-vars-ga-outbound-link='https://www.womenshealthmag.com/fitness/a29857553/circuit-training/'
+            >
+              Circuit training
 						</a>{' '}
-						involves going through a series of several exercises
+            involves going through a series of several exercises
 						until you reach the last one, resting, and then
 						repeating all the moves again (and potentially again,
 						and again). Revenig says you can modify this kind of
@@ -96,22 +96,22 @@ function StrengthTraning() {
 						manipulate your work-to-rest ratio in circuits depending
 						on what kind of training effect you're after," explains
 						Revenig.{' '}
-					</li>
-					<li>
-						<strong>Hypertrophy Training:</strong> Strength training
+          </li>
+          <li>
+            <strong>Hypertrophy Training:</strong> Strength training
 						does build muscle, and it can be used to increase the
 						size of your muscles too...but only if you're doing a
 						type of strength training called{' '}
-						<a
-							className='link'
-							href='https://www.womenshealthmag.com/fitness/a29514236/what-is-hypertrophy/'
-							target='_blank'
-							rel='noreferrer'
-							data-vars-ga-outbound-link='https://www.womenshealthmag.com/fitness/a29514236/what-is-hypertrophy/'
-						>
-							hypertrophy
+            <a
+              className='link'
+              href='https://www.womenshealthmag.com/fitness/a29514236/what-is-hypertrophy/'
+              target='_blank'
+              rel='noreferrer'
+              data-vars-ga-outbound-link='https://www.womenshealthmag.com/fitness/a29514236/what-is-hypertrophy/'
+            >
+              hypertrophy
 						</a>
-						. So anyone who's worried that you’ll end up looking
+            . So anyone who's worried that you’ll end up looking
 						like a bodybuilder just because you picked up a weight,
 						don’t be. “An increase in muscle size does NOT equate to
 						bulking unless you are eating to gain mass as well,”
@@ -121,19 +121,19 @@ function StrengthTraning() {
 						other words, strength training a couple times a week
 						isn't going to do the trick.
 					</li>
-					<li>
-						<strong>Max Strength Training: </strong>Revenig suggests
+          <li>
+            <strong>Max Strength Training: </strong>Revenig suggests
 						transitioning into this type of training once you’ve
 						built up your muscle endurance and mastered basic form.
 						This kind of training involves bringing your number of
 						repetitions down to about 3–6 and increasing the amount
 						of weight you’re lifting.
 					</li>
-				</ul>
-			</div>
+        </ul>
+      </div>
 
-			<Videos width = '50vw' height = '28.125vw' />
-		</div>
-	)
+      <Videos width='50vw' height='28.125vw' />
+    </div>
+  )
 }
 export default StrengthTraning
