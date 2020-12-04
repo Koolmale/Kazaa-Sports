@@ -117,3 +117,5 @@ function Basketball() {
     </div>
   )
 }
+
+export default Basketball;

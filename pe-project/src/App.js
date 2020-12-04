@@ -6,6 +6,7 @@ import FootballHome from './pages/football_home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ThemeProvider } from '@material-ui/styles'
 import theme from './styles/themes/main'
+import Bbhome from './pages/bb-home'
 
 
 
@@ -29,6 +30,11 @@ function App() {
 							path='/flag-football'
 							exact
 							component={FootballHome}
+						/>
+            <Route
+							path='/basketball'
+							exact
+							component={Bbhome}
 						/>
 					</Switch>
 				</div>
