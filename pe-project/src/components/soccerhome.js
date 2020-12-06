@@ -68,3 +68,5 @@ function Soccerhome() {
     </div>
   )
 }
+
+export default Soccerhome;

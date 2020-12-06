@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ThemeProvider } from '@material-ui/styles'
 import theme from './styles/themes/main'
 import Bbhome from './pages/bb-home'
+import Soccerhome from './components/soccerhome'
 
 
 
@@ -35,6 +36,11 @@ function App() {
 							path='/basketball'
 							exact
 							component={Bbhome}
+						/>
+             <Route
+							path='/soccer'
+							exact
+							component={Soccerhome}
 						/>
 					</Switch>
 				</div>
