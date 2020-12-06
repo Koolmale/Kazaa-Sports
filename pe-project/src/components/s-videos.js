@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactPlayer from 'react-player/youtube'
-import links from './videos/bb-videos.json'
+import links from './videos/s-videos.json'
 
-function bb_videos(props) {
+function s_videos(props) {
 	return (
 		<div className='videos'>
 			<div className='st-title'> Videos </div>
@@ -20,4 +20,4 @@ function bb_videos(props) {
 	)
 }
 
-export default bb_videos
+export default s_videos
