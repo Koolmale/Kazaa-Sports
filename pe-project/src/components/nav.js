@@ -235,7 +235,7 @@ function NavTabs(props) {
 			>
 				<Tabs orientation='vertical' variant='fullWidth' value={false}>
 					<StyledMenuItem>
-						<Tab {...props} label='Soccer' href='/' />
+						<Tab {...props} label='Soccer' href='/soccer' />
 					</StyledMenuItem>
 
 					<StyledMenuItem>

@@ -3,6 +3,7 @@ import Home from './pages/home'
 import About from './pages/about'
 import FlagFootball from './pages/flag_football'
 import Basketball from './pages/basketball'
+import Soccer from './pages/soccer'
 
 const routes = [
 	{
@@ -20,6 +21,10 @@ const routes = [
 	{
 		path: '/basketball',
 		component: Basketball,
+	},
+	{
+		path: '/soccer',
+		component: Soccer,
 	},
 	{
 		path: '/about',

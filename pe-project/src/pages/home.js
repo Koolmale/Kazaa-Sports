@@ -44,6 +44,7 @@ function Home() {
 						size='large'
 						color='secondary'
 						className={classes.button}
+						href = '/soccer'
 					>
 						Tutorials
 					</Button>
@@ -57,6 +58,7 @@ function Home() {
 							size='large'
 							color='secondary'
 							className={classes.button}
+							href = '/basketball'
 						>
 							Tutorials
 						</Button>
