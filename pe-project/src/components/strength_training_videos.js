@@ -12,9 +12,12 @@ function strength_training_videos(props) {
 					url={url}
 					controls={true}
                     className='video'
-                    {...props}
+					{...props}
+					
 				/>
-			))}
+            ))}
+            
+            
 			
 		</div>
 	)
