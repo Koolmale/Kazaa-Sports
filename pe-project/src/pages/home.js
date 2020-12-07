@@ -12,14 +12,18 @@ const useStyles = makeStyles(theme => ({
 		minWidth: '15vw',
 		height: '10vh',
 		width: '20vmax',
-		fontSize: '1.5rem'
+		fontSize: '1.5rem',
+		'&:hover': {
+			transform: 'scale(1.06)',
+			transition: 'all ease 0.2s'
+		}
 	}
 }))
 
 function Home() {
 	const classes = useStyles()
 	return (
-		<div id='body'>
+		<div id=''>
 			<div id='section'>
 				<div id='section1'>
 					<div>
@@ -68,6 +72,7 @@ function Home() {
 							size='large'
 							color='secondary'
 							className={classes.button}
+							href='/flag-football'
 						>
 							Tutorials
 						</Button>
@@ -82,7 +87,7 @@ function Home() {
 							size='large'
 							color='secondary'
 							className={classes.button}
-							href = '/strength-training'
+							href='/strength-training'
 						>
 							Tutorials
 						</Button>

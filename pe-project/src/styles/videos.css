@@ -1,0 +1,9 @@
+
+.videos {
+	display: flex;
+	flex-direction: column;
+}
+
+.video {
+	margin: 5vh 0;
+}

@@ -1,19 +1,19 @@
 import React from 'react'
-import Videos from '../components/strength_training_videos'
-import '../styles/strength_training.css'
+import links from '../components/videos/strength_training_videos_list.json'
+import Videos from '../components/videos'
+import '../styles/sports_page.css'
 
 function StrengthTraning() {
 	return (
-		<div id='strength-training'>
+		<div id='body'>
 			
-			<Videos width = '50vw' height = '28.125vw' />
 
-			<h1 className='st-title'>
+			<h1 className='title'>
 				Strength Training 101: How to Get Started
 			</h1>
 
-			<div className='st-paragraphs-container'>
-				<p className='st-paragraphs'>
+			<div className='paragraph-container'>
+				<p className='paragraph'>
 					If you want to kick your fitness routine up a notch,
 					consider giving the treadmill a break and showing the loaded
 					barbells some love. You’ll still sweat those calories off
@@ -24,7 +24,7 @@ function StrengthTraning() {
 					to build muscle mass, strength, and endurance.
 				</p>
 
-				<p className='st-paragraphs'>
+				<p className='paragraph'>
 					If you’re new to the weight room, getting started might seem
 					a little intimidating, but implementing strength training
 					into your fitness routine doesn’t mean you have to
@@ -34,7 +34,7 @@ function StrengthTraning() {
 					you adapt, you can increase your frequency of training.”
 				</p>
 
-				<p className='st-paragraphs'>
+				<p className='paragraph'>
 					It usually takes a few weeks to start seeing results, but
 					strength training is a sure way to build rock-solid abs,
 					load up on your booty gains, or seriously sculpt that part
@@ -45,11 +45,11 @@ function StrengthTraning() {
 					strength training for those ready to get started.
 				</p>
 
-				<h2 className='st-subtitle'>
+				<h2 className='subtitle'>
 					Different Types Of Strength Training
 				</h2>
 
-				<ul class='st-body-ul'>
+				<ul class='body-ul'>
 					<li>
 						<strong>Muscle Endurance Training: </strong>Revenig
 						recommends beginners start by lifting a higher volume,
@@ -113,6 +113,7 @@ function StrengthTraning() {
 					</li>
 				</ul>
 			</div>
+			<Videos links = {links} styles = {{width: '50vw', height:'28.125vw'}} />
 		</div>
 	)
 }

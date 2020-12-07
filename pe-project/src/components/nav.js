@@ -222,7 +222,7 @@ function NavTabs(props) {
 				variant='contained'
 				onClick={handleClick}
 			/>
-			<Tab {...props} label='About' href='/' />
+			<Tab {...props} label='About' href='/about' />
 		
 
 			<StyledMenu
@@ -239,11 +239,11 @@ function NavTabs(props) {
 					</StyledMenuItem>
 
 					<StyledMenuItem>
-						<Tab {...props} label='Football' href='/' />
+						<Tab {...props} label='Football' href='/flag-football'/>
 					</StyledMenuItem>
 
 					<StyledMenuItem>
-						<Tab {...props} label='Basketball' href='/' />
+						<Tab {...props} label='Basketball' href='/basketball' />
 					</StyledMenuItem>
 
 					<StyledMenuItem>
