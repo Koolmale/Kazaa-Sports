@@ -10,4 +10,4 @@ function FootballHome() {
 }
 
 // why because
-export default FootballHome
+export default FootballHome;
