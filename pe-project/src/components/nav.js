@@ -13,7 +13,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import logo from '../assets/logo.png'
 import { withStyles } from '@material-ui/core/styles'
 import Menu from '@material-ui/core/Menu'
-import {Redirect} from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -130,9 +130,10 @@ function Nav(props) {
 								)}
 							</IconButton>
 						)}
+
 						<img src={logo} id='logo' alt='logo' />
 
-						<div id='title'>Kazaa Sports</div>
+						<div id='title'> <Link to = '/' style = {{textDecoration: 'none', color: 'white'}}> Kazaa Sports </Link></div>
 
 						{screen_size_medium || (
 							<Tabs
@@ -219,7 +220,7 @@ function Search({ classes, mobile }) {
 				style={{ fontSize: '1.5vw' }}
 				value={searchTerm}
 			/>
-			{searched && <Redirect to = {`/search/${searchTerm}`}/>}
+			{searched && <Redirect to={`/search/${searchTerm}`} />}
 		</div>
 	)
 }

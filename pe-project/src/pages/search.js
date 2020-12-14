@@ -5,28 +5,37 @@ import '../styles/sports_page.css'
 
 function Search(props) {
 	const { term } = props.match.params
-    const [searchResponse, setSearchResponse] = React.useState('')
-    const [loading, setLoading] = React.useState(true)
-    //to avoid CORS error
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+	const [searchResponse, setSearchResponse] = React.useState('')
+	const [loading, setLoading] = React.useState(true)
+	const [error, setError] = React.useState(false)
+	//to avoid CORS error
+	const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 
 	React.useEffect(() => {
+        setError(false)
 		axios({
 			url:
-				proxyUrl +
-				`https://aliman21.pythonanywhere.com/search/${term}`,
+				proxyUrl + `https://aliman21.pythonanywhere.com/search/${term}`,
 			method: 'GET',
-        }).then(res => {
+		}).then(res => {
             setSearchResponse(res.data)
+			setLoading(false)
+        }).catch(() => {
             setLoading(false)
+            setError(true)
         })
 	}, [term])
 
 	return (
 		<div>
-            <h1> You searched for: {term} </h1>
-            {loading && <Loading/>}
-            <div dangerouslySetInnerHTML={{ __html: searchResponse }}/>
+            <h1 style={{ textTransform: 'capitalize' }}> {term}: </h1>
+            {error && <h1>
+            Error occured: try again later</h1>}
+			{loading ? (
+				<Loading />
+			) : (
+				<div dangerouslySetInnerHTML={{ __html: searchResponse }} />
+			)}
 		</div>
 	)
 }

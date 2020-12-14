@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function loading() {
     return (
 		<div>
@@ -9,6 +10,7 @@ function loading() {
 				src='https://media.giphy.com/media/r5DvDR0YkVDkk/giphy.gif'
 				alt='loading'
 			/>
+      
 		</div>
 	)
 }
