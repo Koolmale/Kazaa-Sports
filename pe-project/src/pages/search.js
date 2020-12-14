@@ -20,7 +20,8 @@ function Search(props) {
 		}).then(res => {
             setSearchResponse(res.data)
 			setLoading(false)
-        }).catch(() => {
+        }).catch((err) => {
+            setSearchResponse(err)
             setLoading(false)
             setError(true)
         })
