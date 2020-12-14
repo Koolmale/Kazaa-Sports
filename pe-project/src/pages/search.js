@@ -7,13 +7,14 @@ import '../styles/search.css'
 function Search(props) {
 	const { term } = props.match.params
 	const [searchResponse, setSearchResponse] = React.useState('')
-	const [images, setImages] = React.useState([])
+	// const [images, setImages] = React.useState([])
 	const [loading, setLoading] = React.useState(true)
 	const [error, setError] = React.useState(false)
 	//to avoid CORS error
 	const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 
 	React.useEffect(() => {
+		// setImages([])
 		setError(false)
 		axios({
 			url:
@@ -30,25 +31,25 @@ function Search(props) {
 				setError(true)
 			})
 
-		axios({
-			url:
-				proxyUrl +
-				`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=${term}&pageNumber=1&pageSize=3&autoCorrect=true`,
-			method: 'GET',
-			headers: {
-				'X-Rapidapi-Key':
-					'983ab8c488msh1435e5213fe35e0p150265jsndf4e066c6cb2',
-				'X-Rapidapi-Host':
-					'contextualwebsearch-websearch-v1.p.rapidapi.com',
-			},
-		})
-			.then(res => {
-				console.log(res)
-				setImages(res.data.value)
-			})
-			.catch(err => {
-				console.error(err)
-			})
+		// axios({
+		// 	url:
+		// 		proxyUrl +
+		// 		`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=${term}&pageNumber=1&pageSize=3&autoCorrect=true`,
+		// 	method: 'GET',
+		// 	headers: {
+		// 		'X-Rapidapi-Key':
+		// 			'983ab8c488msh1435e5213fe35e0p150265jsndf4e066c6cb2',
+		// 		'X-Rapidapi-Host':
+		// 			'contextualwebsearch-websearch-v1.p.rapidapi.com',
+		// 	},
+		// })
+		// 	.then(res => {
+		// 		console.log(res)
+		// 		setImages(res.data.value)
+		// 	})
+		// 	.catch(err => {
+		// 		console.error(err)
+		// 	})
 	}, [term])
 
 	return (
@@ -67,7 +68,7 @@ function Search(props) {
 				<div>
 						<div dangerouslySetInnerHTML={{ __html: searchResponse }} />
 						<div className = 'images'> 
-					{images.map(img => (
+					{/* {images.map(img => (
 						<div className='img'>
 							<img
 								src={img.url}
@@ -75,7 +76,7 @@ function Search(props) {
 								key={img.height}
 							/>
 						</div>
-					))}
+					))} */}
 							</div>
 				</div>
 			)}

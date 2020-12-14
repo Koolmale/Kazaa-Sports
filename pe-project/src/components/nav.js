@@ -210,6 +210,7 @@ function Search({ classes, mobile }) {
 					input: classes.inputInput,
 				}}
 				onKeyUp={event => {
+
 					if (event.key === 'Enter') {
 						setSearched(true)
 					}
