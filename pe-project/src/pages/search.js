@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Loading from '../components/loading'
 import '../styles/sports_page.css'
+import '../styles/search.css'
 
 function Search(props) {
 	const { term } = props.match.params
@@ -28,8 +29,8 @@ function Search(props) {
 	}, [term])
 
 	return (
-		<div>
-            <h1 style={{ textTransform: 'capitalize' }}> {term}: </h1>
+		<div id = 'body'>
+            <h1 style={{ textTransform: 'capitalize' }} className = 'title header'> {term}: </h1>
             {error && <h1>
             Error occured: try again later</h1>}
 			{loading ? (

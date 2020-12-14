@@ -1,9 +1,8 @@
 #body {
-    margin: 5vh auto;
+	margin: 5vh auto;
 	width: 70vw;
 	display: flex;
 	flex-direction: column;
-
 }
 
 #body div {
@@ -11,44 +10,57 @@
 }
 
 .header {
-    color: #541168;
-    font-family: Open Sans;
+	color: #541168;
+	font-family: Open Sans;
 }
 
+p + p {
+    text-indent: 2em;
+    margin: 4vh 0;
+}
+
+.mw-empty-elt {
+	color: #202122;
+	font-size: calc(1em * 0.875);
+	line-height: 1.6;
+	direction: ltr;
+	margin: 0.5em 0;
+	display: none;
+}
 
 p {
     font-family: 'Maven Pro', sans-serif;
+    line-height: 1.3rem;
 }
 
-.title {
-    font-size: 3.5rem;
-    line-height: 1;
-    margin-bottom: .9375rem;
-    letter-spacing: -.05rem;
-    font-weight: 700;
-    text-align: center;
 
+.title {
+	font-size: 3.5rem;
+	line-height: 1;
+	margin-bottom: 0.9375rem;
+	letter-spacing: -0.05rem;
+	font-weight: 700;
+	text-align: center;
 }
 
 .subtitle {
-    text-align: center;
-    margin-top: 8vh;
+	text-align: center;
+	margin-top: 8vh;
 }
-
 
 .paragraph {
-    margin: 5vh 10vw;
-    text-indent: 2vw;
+	margin: 5vh 10vw;
+	text-indent: 2vw;
 }
 
-.body-ul li{
-    margin: 5vh 10vw;
+.body-ul li {
+	margin: 5vh 10vw;
 }
 
-.rules-container{
-    display: block;
-    width: 50vw;
-    margin: 0 auto;
-    text-align: left;
-    margin-bottom: 10vh;
+.rules-container {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	text-align: left;
+	margin-bottom: 10vh;
 }
