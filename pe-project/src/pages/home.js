@@ -2,10 +2,8 @@ import { Button } from '@material-ui/core'
 import React from 'react'
 import StickyFooter from 'react-sticky-footer'
 import logo from '../assets/logo.png'
-import {makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import '../styles/home.css'
-
-
 
 const useStyles = makeStyles(theme => ({
 	button: {
@@ -15,9 +13,9 @@ const useStyles = makeStyles(theme => ({
 		fontSize: '1.5rem',
 		'&:hover': {
 			transform: 'scale(1.06)',
-			transition: 'all ease 0.2s'
-		}
-	}
+			transition: 'all ease 0.2s',
+		},
+	},
 }))
 
 function Home() {
@@ -44,7 +42,7 @@ function Home() {
 						size='large'
 						color='secondary'
 						className={classes.button}
-						href = '/soccer'
+						href='/soccer'
 					>
 						Tutorials
 					</Button>
@@ -58,7 +56,7 @@ function Home() {
 							size='large'
 							color='secondary'
 							className={classes.button}
-							href = '/basketball'
+							href='/basketball'
 						>
 							Tutorials
 						</Button>

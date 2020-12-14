@@ -6,9 +6,7 @@ import '../styles/sports_page.css'
 function StrengthTraning() {
 	return (
 		<div id='body'>
-			
-
-			<h1 className='title'>
+			<h1 className='title header'>
 				Strength Training 101: How to Get Started
 			</h1>
 
@@ -45,7 +43,7 @@ function StrengthTraning() {
 					strength training for those ready to get started.
 				</p>
 
-				<h2 className='subtitle'>
+				<h2 className='subtitle header'>
 					Different Types Of Strength Training
 				</h2>
 
@@ -113,7 +111,10 @@ function StrengthTraning() {
 					</li>
 				</ul>
 			</div>
-			<Videos links = {links} styles = {{width: '50vw', height:'28.125vw'}} />
+			<Videos
+				links={links}
+				styles={{ width: '50vw', height: '28.125vw' }}
+			/>
 		</div>
 	)
 }

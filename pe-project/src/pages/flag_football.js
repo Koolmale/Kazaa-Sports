@@ -6,9 +6,9 @@ import '../styles/sports_page.css'
 function FlagFootball() {
 	return (
 		<div id='body'>
-			<h1 className='title'>Flag Football</h1>
+			<h1 className='title header'>Flag Football</h1>
 
-			<h2 className='subtitle'>What is Flag Football?</h2>
+			<h2 className='subtitle header'>What is Flag Football?</h2>
 
 			<p className='paragraph'>
 				Flag football is a version of American football where the basic
@@ -20,7 +20,9 @@ function FlagFootball() {
 				initiates it.
 			</p>
 
-			<h2 className='subtitle'>How to Play Flag Football/Rules:</h2>
+			<h2 className='subtitle header'>
+				How to Play Flag Football/Rules:
+			</h2>
 
 			<div className='rules-container'>
 				<ul className='rules'>

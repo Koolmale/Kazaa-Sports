@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 	},
 
 	tabs: {
-		backgroundColor: '#53A548',
+		backgroundColor: theme.primary,
 	},
 	menuButton: {
 		marginRight: theme.spacing(2),
@@ -40,9 +40,16 @@ const useStyles = makeStyles(theme => ({
 			marginLeft: theme.spacing(1),
 			width: 'auto',
 		},
-		// '@media (max-width: 600px)': {
-		// 	width: '12ch',
-		// },
+	},
+
+	mobileSearch: {
+		position: 'absolute',
+		left: 'calc(50% - 8ch)',
+		borderRadius: theme.shape.borderRadius,
+		backgroundColor: fade(theme.palette.common.white, 0.15),
+		'&:hover': {
+			backgroundColor: fade(theme.palette.common.white, 0.25),
+		},
 	},
 	searchIcon: {
 		padding: theme.spacing(0, 2),
@@ -77,8 +84,10 @@ const useStyles = makeStyles(theme => ({
 		color: '#fff',
 		fontSize: '1.75rem',
 		'&:hover': {
-			color: '#830885',
-			transition: 'all .5s ease',
+			// color: '#830885',
+			transform: 'translateY(-5px)',
+			borderBottom: '2px solid #830885',
+			transition: 'transform .2s ease',
 		},
 	},
 
@@ -93,7 +102,7 @@ const useStyles = makeStyles(theme => ({
 
 function Nav(props) {
 	const classes = useStyles()
-	const screen_size_medium = useMediaQuery('(max-width: 1159px)')
+	const screen_size_medium = useMediaQuery('(max-width: 1450px)')
 	const screen_size_small = useMediaQuery('(max-width: 720px)')
 	const [clicked, setClicked] = React.useState(false)
 	const navRef = React.useRef(null)
@@ -179,12 +188,15 @@ const StyledMenuItem = withStyles(theme => ({
 				color: theme.palette.common.white,
 			},
 		},
+		minHeight: '5vh',
 	},
 }))(MenuItem)
 
-function Search({ classes }) {
+function Search({ classes, mobile }) {
+	const [searchTerm, setSearchTerm] = React.useState('')
+
 	return (
-		<div className={classes.search}>
+		<div className={mobile ? classes.mobileSearch : classes.search}>
 			<div className={classes.searchIcon}>
 				<SearchIcon />
 			</div>
@@ -194,8 +206,16 @@ function Search({ classes }) {
 					root: classes.inputRoot,
 					input: classes.inputInput,
 				}}
+				onKeyUp={event => {
+					if (event.key === 'Enter') {
+						console.log(searchTerm)
+					}
+				}}
+				fullWidth={mobile}
+				onChange={e => setSearchTerm(e.target.value)}
 				inputProps={{ 'aria-label': 'search' }}
 				style={{ fontSize: '1.5vw' }}
+				value={searchTerm}
 			/>
 		</div>
 	)
@@ -223,7 +243,6 @@ function NavTabs(props) {
 				onClick={handleClick}
 			/>
 			<Tab {...props} label='About' href='/about' />
-		
 
 			<StyledMenu
 				id='customized-menu'
@@ -239,7 +258,11 @@ function NavTabs(props) {
 					</StyledMenuItem>
 
 					<StyledMenuItem>
-						<Tab {...props} label='Football' href='/flag-football'/>
+						<Tab
+							{...props}
+							label='Football'
+							href='/flag-football'
+						/>
 					</StyledMenuItem>
 
 					<StyledMenuItem>
@@ -275,7 +298,22 @@ function MobileNav({ classes, clicked, handleClose, navRef, show_search }) {
 				style={{ width: '100vw' }}
 				value={false}
 			>
-				<NavTabs className={classes.navElements}/>
+				{show_search && (
+					<div
+						style={{
+							height: '5vh',
+							width: '100vw',
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							justifyItems: 'center',
+							position: 'relative',
+						}}
+					>
+						<Search classes={classes} mobile={show_search} />
+					</div>
+				)}
+				<NavTabs className={classes.navElements} />
 			</Tabs>
 		</StyledMenu>
 	)
