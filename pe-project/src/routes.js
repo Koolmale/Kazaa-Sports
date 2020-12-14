@@ -4,6 +4,7 @@ import About from './pages/about'
 import FlagFootball from './pages/flag_football'
 import Basketball from './pages/basketball'
 import Soccer from './pages/soccer'
+import Search from './pages/search'
 
 const routes = [
 	{
@@ -29,6 +30,10 @@ const routes = [
 	{
 		path: '/about',
 		component: About,
+	},
+	{
+		path: '/search/:term',
+		component: Search,
 	},
 ]
 

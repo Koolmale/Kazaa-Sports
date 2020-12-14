@@ -16,7 +16,7 @@ function App() {
 							<Route
 								path={route.path}
 								exact
-								component={route.component}
+								component={(props) => <route.component {...props}/>}
 							/>
 						))}
 					</Switch>

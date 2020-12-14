@@ -13,6 +13,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import logo from '../assets/logo.png'
 import { withStyles } from '@material-ui/core/styles'
 import Menu from '@material-ui/core/Menu'
+import {Redirect} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -194,6 +195,7 @@ const StyledMenuItem = withStyles(theme => ({
 
 function Search({ classes, mobile }) {
 	const [searchTerm, setSearchTerm] = React.useState('')
+	const [searched, setSearched] = React.useState(false)
 
 	return (
 		<div className={mobile ? classes.mobileSearch : classes.search}>
@@ -208,7 +210,7 @@ function Search({ classes, mobile }) {
 				}}
 				onKeyUp={event => {
 					if (event.key === 'Enter') {
-						console.log(searchTerm)
+						setSearched(true)
 					}
 				}}
 				fullWidth={mobile}
@@ -217,6 +219,7 @@ function Search({ classes, mobile }) {
 				style={{ fontSize: '1.5vw' }}
 				value={searchTerm}
 			/>
+			{searched && <Redirect to = {`/search/${searchTerm}`}/>}
 		</div>
 	)
 }
