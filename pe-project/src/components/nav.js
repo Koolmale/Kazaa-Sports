@@ -18,6 +18,7 @@ import { Redirect, Link } from 'react-router-dom'
 const useStyles = makeStyles(theme => ({
 	root: {
 		flexGrow: 1,
+		position: 'relative',
 	},
 
 	tabs: {
@@ -85,7 +86,6 @@ const useStyles = makeStyles(theme => ({
 		color: '#fff',
 		fontSize: '1.75rem',
 		'&:hover': {
-			// color: '#830885',
 			transform: 'translateY(-5px)',
 			borderBottom: '2px solid #830885',
 			transition: 'transform .2s ease',

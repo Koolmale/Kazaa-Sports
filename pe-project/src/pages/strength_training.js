@@ -1,14 +1,20 @@
 import React from 'react'
 import links from '../components/videos/strength_training_videos_list.json'
 import Videos from '../components/videos'
+import SideNav from '../components/sidenav'
+import { Element } from 'react-scroll'
+
 import '../styles/sports_page.css'
 
 function StrengthTraning() {
 	return (
 		<div id='body'>
-			<h1 className='title header'>
-				Strength Training 101: How to Get Started
-			</h1>
+			<SideNav />
+			<Element name='articles'>
+				<h1 className='title header'>
+					Strength Training 101: How to Get Started
+				</h1>
+			</Element>
 
 			<div className='paragraph-container'>
 				<p className='paragraph'>
@@ -43,9 +49,11 @@ function StrengthTraning() {
 					strength training for those ready to get started.
 				</p>
 
-				<h2 className='subtitle header'>
-					Different Types Of Strength Training
-				</h2>
+				<Element name='tutorial'>
+					<h2 className='subtitle header'>
+						Different Types Of Strength Training
+					</h2>
+				</Element>
 
 				<ul class='body-ul'>
 					<li>
