@@ -1,2 +1,2 @@
-# PE-project
-A website displaying certain sports
+# Kazaa Sports
+A website displaying information and educational materials about different sports
