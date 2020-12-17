@@ -1,13 +1,10 @@
 import React from 'react'
-import Videos from '../components/videos.js'
 import links from '../components/videos/soccer_videos_list.json'
-import '../styles/sports_page.css'
+import SportsPageTemplate, { Tutorial } from './sports_page_template'
 
 function Soccer() {
 	return (
-		<div id='body'>
-			<h1 className='title'>Soccer</h1>
-
+		<SportsPageTemplate title='Soccer' links={links}>
 			<div className='paragraph-container'>
 				<div className='paragraph'>
 					Association football, more commonly known as football or
@@ -54,16 +51,9 @@ function Soccer() {
 					</a>
 				</div>
 
-				<h2 className='subtitle'>
-					<a
-						className='link'
-						href='https://en.wikipedia.org/wiki/Association_football'
-						target='_blank'
-						rel='noreferrer'
-					>
-						Laws Of the Game
-					</a>
-				</h2>
+				<Tutorial>
+					<h2 className='subtitle header'>Laws Of the Game</h2>
+				</Tutorial>
 
 				<ul className='body-ul'>
 					<li>
@@ -100,12 +90,7 @@ function Soccer() {
 					</li>
 				</ul>
 			</div>
-
-			<Videos
-				links={links}
-				styles={{ width: '50vw', height: '28.125vw' }}
-			/>
-		</div>
+		</SportsPageTemplate>
 	)
 }
 

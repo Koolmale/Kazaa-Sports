@@ -14,12 +14,14 @@ import logo from '../assets/logo.png'
 import { withStyles } from '@material-ui/core/styles'
 import Menu from '@material-ui/core/Menu'
 import { Redirect, Link } from 'react-router-dom'
+import HideOnScroll from '../components/hideOnScroll'
 
 const useStyles = makeStyles(theme => ({
 	root: {
 		flexGrow: 1,
-		position: 'relative',
 	},
+
+	offset: theme.mixins.toolbar,
 
 	tabs: {
 		backgroundColor: theme.primary,
@@ -109,55 +111,84 @@ function Nav(props) {
 	const navRef = React.useRef(null)
 
 	return (
-		<nav>
+		<>
 			<div className={classes.root}>
-				<AppBar position='relative' color='primary' ref={navRef}>
-					<Toolbar>
-						{screen_size_medium && (
-							<IconButton
-								edge='start'
-								className={classes.menuButton}
-								color='inherit'
-								aria-label='open drawer'
-								onClick={() =>
-									setClicked(prevClicked => !prevClicked)
-								}
-							>
-								{clicked ? (
-									<CloseIcon style={{ fontSize: '3rem' }} />
-								) : (
-									<MenuIcon style={{ fontSize: '3rem' }} />
+				<HideOnScroll>
+					<nav>
+						<AppBar position='fixed' color='primary' ref={navRef}>
+							<Toolbar>
+								{screen_size_medium && (
+									<IconButton
+										edge='start'
+										className={classes.menuButton}
+										color='inherit'
+										aria-label='open drawer'
+										onClick={() =>
+											setClicked(
+												prevClicked => !prevClicked
+											)
+										}
+									>
+										{clicked ? (
+											<CloseIcon
+												style={{ fontSize: '3rem' }}
+											/>
+										) : (
+											<MenuIcon
+												style={{ fontSize: '3rem' }}
+											/>
+										)}
+									</IconButton>
 								)}
-							</IconButton>
+
+								<img src={logo} id='logo' alt='logo' />
+
+								<div id='title'>
+									{' '}
+									<Link
+										to='/'
+										style={{
+											textDecoration: 'none',
+											color: 'white',
+										}}
+									>
+										{' '}
+										Kazaa Sports{' '}
+									</Link>
+								</div>
+
+								{screen_size_medium || (
+									<Tabs
+										value={false}
+										variant='fullWidth'
+										className={classes.tabsContainer}
+									>
+										<NavTabs
+											className={classes.navElements}
+										/>
+									</Tabs>
+								)}
+								{screen_size_small || (
+									<Search classes={classes} />
+								)}
+							</Toolbar>
+						</AppBar>
+						<div className={classes.offset} />
+						{screen_size_medium && (
+							<MobileNav
+								clicked={clicked}
+								handleClose={() => setClicked(false)}
+								onSearch={() => setClicked(false)}
+								navRef={navRef}
+								classes={classes}
+								show_search={screen_size_small}
+							/>
 						)}
-
-						<img src={logo} id='logo' alt='logo' />
-
-						<div id='title'> <Link to = '/' style = {{textDecoration: 'none', color: 'white'}}> Kazaa Sports </Link></div>
-
-						{screen_size_medium || (
-							<Tabs
-								value={false}
-								variant='fullWidth'
-								className={classes.tabsContainer}
-							>
-								<NavTabs className={classes.navElements} />
-							</Tabs>
-						)}
-						{screen_size_small || <Search classes={classes} />}
-					</Toolbar>
-				</AppBar>
+					</nav>
+				</HideOnScroll>
 			</div>
-			{screen_size_medium && (
-				<MobileNav
-					clicked={clicked}
-					handleClose={() => setClicked(false)}
-					navRef={navRef}
-					classes={classes}
-					show_search={screen_size_small}
-				/>
-			)}
-		</nav>
+			<div className={classes.offset} />
+		</>
 	)
 }
 
@@ -194,7 +225,7 @@ const StyledMenuItem = withStyles(theme => ({
 	},
 }))(MenuItem)
 
-function Search({ classes, mobile }) {
+function Search({ classes, mobile, onSearch }) {
 	const [searchTerm, setSearchTerm] = React.useState('')
 	const [searched, setSearched] = React.useState(false)
 
@@ -210,9 +241,9 @@ function Search({ classes, mobile }) {
 					input: classes.inputInput,
 				}}
 				onKeyUp={event => {
-
 					if (event.key === 'Enter') {
 						setSearched(true)
+						onSearch && onSearch()
 					}
 				}}
 				fullWidth={mobile}
@@ -287,7 +318,14 @@ function NavTabs(props) {
 	)
 }
 
-function MobileNav({ classes, clicked, handleClose, navRef, show_search }) {
+function MobileNav({
+	classes,
+	clicked,
+	handleClose,
+	navRef,
+	show_search,
+	onSearch,
+}) {
 	return (
 		<StyledMenu
 			id='customized-menu'
@@ -315,7 +353,11 @@ function MobileNav({ classes, clicked, handleClose, navRef, show_search }) {
 							position: 'relative',
 						}}
 					>
-						<Search classes={classes} mobile={show_search} />
+						<Search
+							classes={classes}
+							mobile={show_search}
+							onSearch={onSearch}
+						/>
 					</div>
 				)}
 				<NavTabs className={classes.navElements} />

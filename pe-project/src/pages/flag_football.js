@@ -1,13 +1,10 @@
 import React from 'react'
-import Videos from '../components/videos'
 import links from '../components/videos/flag_football_videos_list.json'
-import '../styles/sports_page.css'
+import SportsPageTemplate, { Tutorial } from './sports_page_template'
 
 function FlagFootball() {
 	return (
-		<div id='body'>
-			<h1 className='title header'>Flag Football</h1>
-
+		<SportsPageTemplate title='Flag Football' links={links}>
 			<h2 className='subtitle header'>What is Flag Football?</h2>
 
 			<p className='paragraph'>
@@ -20,9 +17,11 @@ function FlagFootball() {
 				initiates it.
 			</p>
 
-			<h2 className='subtitle header'>
-				How to Play Flag Football/Rules:
-			</h2>
+			<Tutorial>
+				<h2 className='subtitle header'>
+					How to Play Flag Football/Rules:
+				</h2>
+			</Tutorial>
 
 			<div className='rules-container'>
 				<ul className='rules'>
@@ -55,13 +54,8 @@ function FlagFootball() {
 					</li>
 				</ul>
 			</div>
-
-			<Videos
-				links={links}
-				styles={{ width: '50vw', height: '28.125vw' }}
-			/>
-		</div>
+		</SportsPageTemplate>
 	)
 }
 
-export default FlagFootball;
+export default FlagFootball

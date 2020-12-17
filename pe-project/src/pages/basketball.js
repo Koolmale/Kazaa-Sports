@@ -1,12 +1,10 @@
 import React from 'react'
 import links from '../components/videos/basket_ball_videos_list.json'
-import Videos from '../components/videos'
-import '../styles/sports_page.css'
+import SportsPageTemplate, { Tutorial } from './sports_page_template'
 
 function Basketball() {
 	return (
-		<div id='body'>
-			<h1 className='title'>Basketball</h1>
+		<SportsPageTemplate title='Basketball' links={links}>
 			<div className='paragraphs-container'>
 				<h2 className='subtitle'>Introduction</h2>
 				<p className='paragraph'>
@@ -17,7 +15,9 @@ function Basketball() {
 					enjoy playing casually, as it is a fun activity with lots of
 					health benefits.{' '}
 				</p>
-				<h2 className='subtitle'>How to play</h2>
+				<Tutorial>
+					<h2 className='subtitle'>How to play</h2>
+				</Tutorial>
 				<p className='paragraph'>
 					The game consists of 2 teams, 2 hoops, and 1 ball. The
 					members of each team try to put the ball into the other
@@ -149,7 +149,7 @@ function Basketball() {
 				</li>
 			</ul>
 
-				<h2 className='subtitle'>Negatives</h2>
+			<h2 className='subtitle'>Negatives</h2>
 			<p className='paragraph'>
 				While there are many benefits of playing this sport, there are a
 				few negatives that may cause you to not enjoy the experience as
@@ -166,7 +166,7 @@ function Basketball() {
 				bones, scratched skin, or sprained ankles.
 			</p>
 
-				<h2 className='subtitle'>Conclusion</h2>
+			<h2 className='subtitle'>Conclusion</h2>
 			<p className='paragraph'>
 				While the negatives of the game may cause some people to become
 				unmotivated to play, one thing to consider is that the positives
@@ -183,11 +183,7 @@ function Basketball() {
 				fun game. So now that we went over all this, go outside with a
 				few friends and give it a try.
 			</p>
-			<Videos
-				links={links}
-				styles={{ width: '50vw', height: '28.125vw' }}
-			/>
-		</div>
+		</SportsPageTemplate>
 	)
 }
 export default Basketball

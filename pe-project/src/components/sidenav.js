@@ -15,6 +15,7 @@ import DescriptionIcon from '@material-ui/icons/Description'
 import YouTubeIcon from '@material-ui/icons/YouTube'
 import SportsIcon from '@material-ui/icons/Sports'
 import { scroller } from 'react-scroll'
+import HideOnScroll from '../components/hideOnScroll'
 
 const drawerWidth = 240
 
@@ -29,6 +30,7 @@ const useStyles = makeStyles(theme => ({
 			duration: theme.transitions.duration.leavingScreen,
 		}),
 	},
+
 	appBarShift: {
 		marginLeft: drawerWidth,
 		width: `calc(100% - ${drawerWidth}px)`,
@@ -43,6 +45,7 @@ const useStyles = makeStyles(theme => ({
 	hide: {
 		display: 'none',
 	},
+
 	drawer: {
 		width: drawerWidth,
 		flexShrink: 0,
@@ -50,8 +53,10 @@ const useStyles = makeStyles(theme => ({
 	},
 	drawerAlways: {
 		backgroundColor: theme.palette.primary.main,
-		position: 'fixed',
-		top: 'auto',
+		// position: 'fixed',
+		// display: 'block',
+		// top: 'auto',
+		// marginTop: '1vh',
 		height: '100vh',
 		borderTop: '2px solid' + theme.palette.secondary.main,
 	},
@@ -93,60 +98,77 @@ export default function MiniDrawer() {
 
 	function ScrollDown(name) {
 		scroller.scrollTo(name, {
-			duration: 1500,
+			duration: 1000,
 			delay: 100,
 			smooth: true,
 		})
 		setOpen(false)
 	}
 	return (
-		<div className={classes.root}>
-			<CssBaseline />
-			<Drawer
-				variant='permanent'
-				className={clsx(classes.drawer, {
-					[classes.drawerOpen]: open,
-					[classes.drawerClose]: !open,
-				})}
-				anchor='left'
-				classes={{
-					paper: clsx(classes.drawerAlways, {
-						[classes.drawerOpen]: open,
-						[classes.drawerClose]: !open,
-					}),
-				}}
-			>
-				<div className={classes.toolbar}>
-					<IconButton onClick={() => setOpen(!open)}>
-						{open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-					</IconButton>
-				</div>
-				<Divider />
-				<List>
-					<ListItem button onClick={() => ScrollDown('articles')}>
-						<ListItemIcon>
-							<DescriptionIcon />
-						</ListItemIcon>
-						<ListItemText primary='Articles' />
-					</ListItem>
-					<Divider />
+		<>
+			<div className={classes.root}>
+				<CssBaseline />
+				<HideOnScroll opposite={true}>
+					<Drawer
+						variant='permanent'
+						className={clsx(classes.drawer, {
+							[classes.drawerOpen]: open,
+							[classes.drawerClose]: !open,
+						})}
+						anchor='top'
+						classes={{
+							paper: clsx(classes.drawerAlways, {
+								[classes.drawerOpen]: open,
+								[classes.drawerClose]: !open,
+							}),
+						}}
+					>
+						<div className={classes.toolbar}>
+							<IconButton onClick={() => setOpen(!open)}>
+								{open ? (
+									<ChevronLeftIcon />
+								) : (
+									<ChevronRightIcon />
+								)}
+							</IconButton>
+						</div>
+						<Divider />
+						<List>
+							<ListItem
+								button
+								onClick={() => ScrollDown('articles')}
+							>
+								<ListItemIcon>
+									<DescriptionIcon />
+								</ListItemIcon>
+								<ListItemText primary='Articles' />
+							</ListItem>
+							<Divider />
 
-					<ListItem button onClick={() => ScrollDown('tutorial')}>
-						<ListItemIcon>
-							<SportsIcon />
-						</ListItemIcon>
-						<ListItemText primary='Tutorial' />
-					</ListItem>
-					<Divider />
+							<ListItem
+								button
+								onClick={() => ScrollDown('tutorial')}
+							>
+								<ListItemIcon>
+									<SportsIcon />
+								</ListItemIcon>
+								<ListItemText primary='Tutorial' />
+							</ListItem>
+							<Divider />
 
-					<ListItem button onClick={() => ScrollDown('videos')}>
-						<ListItemIcon>
-							<YouTubeIcon />
-						</ListItemIcon>
-						<ListItemText primary='Videos' />
-					</ListItem>
-				</List>
-			</Drawer>
-		</div>
+							<ListItem
+								button
+								onClick={() => ScrollDown('videos')}
+							>
+								<ListItemIcon>
+									<YouTubeIcon />
+								</ListItemIcon>
+								<ListItemText primary='Videos' />
+							</ListItem>
+						</List>
+					</Drawer>
+				</HideOnScroll>
+			</div>
+		</>
 	)
 }

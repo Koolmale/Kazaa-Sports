@@ -1,20 +1,10 @@
 import React from 'react'
 import links from '../components/videos/strength_training_videos_list.json'
-import Videos from '../components/videos'
-import SideNav from '../components/sidenav'
-import { Element } from 'react-scroll'
+import SportsPageTemplate, { Tutorial } from './sports_page_template'
 
-import '../styles/sports_page.css'
-
-function StrengthTraning() {
+function StrengthTraining() {
 	return (
-		<div id='body'>
-			<SideNav />
-			<Element name='articles'>
-				<h1 className='title header'>
-					Strength Training 101: How to Get Started
-				</h1>
-			</Element>
+		<SportsPageTemplate title='Strength Training 101: How to Get Started' links = {links}>
 
 			<div className='paragraph-container'>
 				<p className='paragraph'>
@@ -49,11 +39,11 @@ function StrengthTraning() {
 					strength training for those ready to get started.
 				</p>
 
-				<Element name='tutorial'>
+				<Tutorial>
 					<h2 className='subtitle header'>
 						Different Types Of Strength Training
 					</h2>
-				</Element>
+				</Tutorial>
 
 				<ul class='body-ul'>
 					<li>
@@ -119,11 +109,7 @@ function StrengthTraning() {
 					</li>
 				</ul>
 			</div>
-			<Videos
-				links={links}
-				styles={{ width: '50vw', height: '28.125vw' }}
-			/>
-		</div>
+		</SportsPageTemplate>
 	)
 }
-export default StrengthTraning
+export default StrengthTraining
