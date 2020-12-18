@@ -1,8 +1,12 @@
 import React from 'react'
 import links from '../components/videos/strength_training_videos_list.json'
+import classNames from 'classnames'
 import SportsPageTemplate, { Tutorial } from './sports_page_template'
+import useStyles from '../styles/style'
 
 function StrengthTraining() {
+	const classes = useStyles()
+
 	return (
 		<SportsPageTemplate title='Strength Training 101: How to Get Started' links = {links}>
 
@@ -40,7 +44,7 @@ function StrengthTraining() {
 				</p>
 
 				<Tutorial>
-					<h2 className='subtitle header'>
+					<h2 className={classNames(classes.header, 'subtitle')}>
 						Different Types Of Strength Training
 					</h2>
 				</Tutorial>

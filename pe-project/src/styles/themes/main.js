@@ -1,18 +1,26 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
 
+
+const text = '#380036'
+
 export default createMuiTheme({
 	palette: {
 		primary: {
-			// main: '#0D5C63',
-			main: '#53A548',
-			// dark: will be calculated from palette.primary.main,
-			// contrastText: will be calculated to contrast with palette.primary.main
+			//primary color, (navbar)
+			main: '#214e34',
+			//text color
+			text: text,
 		},
 		secondary: {
-			light: '#0066ff',
-			main: '#830885',
-			contrastText: '#fff',
+			//second contrast color
+			main: text,
+			//background color
+			background: '#d4d6b9',
+
+			// light: '#040c14',
+			// contrastText: '#fff',
 		},
 	},
 })
+ 

@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 	offset: theme.mixins.toolbar,
 
 	tabs: {
-		backgroundColor: theme.primary,
+		backgroundColor: theme.palette.primary.main,
 	},
 	menuButton: {
 		marginRight: theme.spacing(2),
@@ -89,7 +89,7 @@ const useStyles = makeStyles(theme => ({
 		fontSize: '1.75rem',
 		'&:hover': {
 			transform: 'translateY(-5px)',
-			borderBottom: '2px solid #830885',
+			borderBottom: '2px solid' + theme.palette.secondary.main,
 			transition: 'transform .2s ease',
 		},
 	},
@@ -192,12 +192,12 @@ function Nav(props) {
 	)
 }
 
-const StyledMenu = withStyles({
+const StyledMenu = withStyles(theme => ({
 	paper: {
-		border: '1px solid #d3d4d5',
-		backgroundColor: '#53A548',
+		border: '1px solid' + theme.palette.secondary.contrastText,
+		backgroundColor: theme.palette.primary.main,
 	},
-})(props => (
+}))(props => (
 	<Menu
 		elevation={0}
 		getContentAnchorEl={null}
