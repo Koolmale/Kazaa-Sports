@@ -10,15 +10,19 @@ import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import CloseIcon from '@material-ui/icons/Close'
+import ThemeIcon from '@material-ui/icons/Brightness4'
 import logo from '../assets/logo.png'
 import { withStyles } from '@material-ui/core/styles'
 import Menu from '@material-ui/core/Menu'
 import { Redirect, Link } from 'react-router-dom'
 import HideOnScroll from '../components/hideOnScroll'
+import ThemeContext from '../styles/themes/themeContext'
 
 const useStyles = makeStyles(theme => ({
 	root: {
 		flexGrow: 1,
+		marginBottom: '12vh',
+		position: 'relative',
 	},
 
 	offset: theme.mixins.toolbar,
@@ -106,7 +110,7 @@ const useStyles = makeStyles(theme => ({
 function Nav(props) {
 	const classes = useStyles()
 	const screen_size_medium = useMediaQuery('(max-width: 1450px)')
-	const screen_size_small = useMediaQuery('(max-width: 720px)')
+	const screen_size_small = useMediaQuery('(max-width: 757px)')
 	const [clicked, setClicked] = React.useState(false)
 	const navRef = React.useRef(null)
 
@@ -169,11 +173,14 @@ function Nav(props) {
 									</Tabs>
 								)}
 								{screen_size_small || (
-									<Search classes={classes} />
+									<>
+										<Search classes={classes} />
+										<ThemeButton />
+									</>
 								)}
 							</Toolbar>
 						</AppBar>
-						<div className={classes.offset} />
+
 						{screen_size_medium && (
 							<MobileNav
 								clicked={clicked}
@@ -187,7 +194,6 @@ function Nav(props) {
 					</nav>
 				</HideOnScroll>
 			</div>
-			<div className={classes.offset} />
 		</>
 	)
 }
@@ -224,6 +230,26 @@ const StyledMenuItem = withStyles(theme => ({
 		minHeight: '5vh',
 	},
 }))(MenuItem)
+
+function ThemeButton({mobile}) {
+	const { darkTheme, setDarkTheme } = React.useContext(ThemeContext)
+	return (
+		<IconButton
+			color={darkTheme ? '' : 'inherit'}
+			onClick={() => setDarkTheme(!darkTheme)}
+			style={
+				mobile
+					? {}
+					: {
+							position: 'absolute',
+							right: '20vw',
+					  }
+			}
+		>
+			<ThemeIcon style={{ fontSize: '3rem' }} />
+		</IconButton>
+	)
+}
 
 function Search({ classes, mobile, onSearch }) {
 	const [searchTerm, setSearchTerm] = React.useState('')
@@ -323,7 +349,7 @@ function MobileNav({
 	clicked,
 	handleClose,
 	navRef,
-	show_search,
+	show_search: showSearch,
 	onSearch,
 }) {
 	return (
@@ -341,7 +367,22 @@ function MobileNav({
 				style={{ width: '100vw' }}
 				value={false}
 			>
-				{show_search && (
+				
+				{showSearch && (
+					<>
+					<div
+						style={{
+							height: '5vh',
+							width: '100vw',
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'center',
+							justifyItems: 'center',
+							position: 'relative',
+						}}
+					>
+							<ThemeButton mobile={true}/>
+						</div>
 					<div
 						style={{
 							height: '5vh',
@@ -355,10 +396,11 @@ function MobileNav({
 					>
 						<Search
 							classes={classes}
-							mobile={show_search}
+							mobile={showSearch}
 							onSearch={onSearch}
 						/>
-					</div>
+						</div>
+						</>
 				)}
 				<NavTabs className={classes.navElements} />
 			</Tabs>
