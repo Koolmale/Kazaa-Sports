@@ -6,7 +6,7 @@ import routes from './routes'
 import { ThemeProvider } from '@material-ui/styles'
 import { useMediaQuery } from '@material-ui/core'
 import ThemeContext from './styles/themes/themeContext'
-import useDarkTheme from './styles/themes/main'
+import useDarkTheme from './styles/themes/useDarkThemeHook'
 import page_404 from './pages/page_404'
 
 function App() {
