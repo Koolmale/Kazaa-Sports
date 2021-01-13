@@ -17,6 +17,8 @@ import SportsIcon from '@material-ui/icons/Sports'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { scroller } from 'react-scroll'
 import HideOnScroll from '../components/hideOnScroll'
+import SportsOutlinedIcon from '@material-ui/icons/SportsOutlined';
+import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 
 const drawerWidth = 240
 
@@ -181,6 +183,9 @@ export default function MiniDrawer() {
 								button
 								onClick={() => ScrollDown('videos')}
 							>
+								<ListItemIcon>
+									<SportsOutlinedIcon />
+								</ListItemIcon>
 								<ListItemText primary='Skills' />
 							</ListItem>
 
@@ -188,6 +193,9 @@ export default function MiniDrawer() {
 								button
 								onClick={() => ScrollDown('videos')}
 							>
+								<ListItemIcon>
+									<SportsSoccerIcon />
+								</ListItemIcon>
 								<ListItemText primary='Dribbling' />
 							</ListItem>
 						</List>
