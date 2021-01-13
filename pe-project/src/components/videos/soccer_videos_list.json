@@ -10,6 +10,45 @@
 				"https://youtu.be/3vjcfv0ob70",
 				"https://youtu.be/x1x9WBTpZi8"
 			]
+		},
+		{
+			"name": "Begginner"
+		},
+		{
+			"name": "Fundamentals",
+			"links": [
+				"https://youtu.be/Kmx0lwCl0L8",
+				"https://youtu.be/fcHJJ1SnwSk",
+				"https://youtu.be/SzZ7Ecql-sg",
+				"https://youtu.be/C4GoT90SWts",
+				"https://youtu.be/mnvjtbPlCE4",
+				"https://youtu.be/pH_G1f6KzfI",
+				"https://youtu.be/nt4ljHSzUfs",
+				"https://youtu.be/SzZ7Ecql-sg"
+			]
+		},
+		{
+			"name": "Advanced"
+		},
+		{
+			"name": "Skills",
+			"links": [
+				"https://youtu.be/Sdv6Y1tqE4U",
+				"https://youtu.be/NMfLJynwyTk",
+				"https://youtu.be/oC9NIqqX5Tw",
+				"https://youtu.be/ROL7JDRbPc0",
+				"https://youtu.be/3vjcfv0ob70",
+				"https://youtu.be/x1x9WBTpZi8"
+			]
+		},
+		{
+			"name": "Shooting",
+			"links": [
+				"https://youtu.be/RE9lBLcf3NQ",
+				"https://youtu.be/8ZtAPe10hSU",
+				"https://youtu.be/flYctEt1OLY",
+				"https://youtu.be/vR2Grj1f0VE"
+			]
 		}
 	]
 }
