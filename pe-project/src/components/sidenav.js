@@ -14,6 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import DescriptionIcon from '@material-ui/icons/Description'
 import YouTubeIcon from '@material-ui/icons/YouTube'
 import SportsIcon from '@material-ui/icons/Sports'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { scroller } from 'react-scroll'
 import HideOnScroll from '../components/hideOnScroll'
 
@@ -164,6 +165,30 @@ export default function MiniDrawer() {
 									<YouTubeIcon />
 								</ListItemIcon>
 								<ListItemText primary='Videos' />
+							</ListItem>
+							
+							<ListItem
+								button
+								onClick={() => ScrollDown('videos')}
+							>
+								<ListItemIcon>
+									<ExpandMoreIcon />
+								</ListItemIcon>
+								<ListItemText primary='More' />
+							</ListItem>
+
+							<ListItem
+								button
+								onClick={() => ScrollDown('videos')}
+							>
+								<ListItemText primary='Skills' />
+							</ListItem>
+
+							<ListItem
+								button
+								onClick={() => ScrollDown('videos')}
+							>
+								<ListItemText primary='Dribbling' />
 							</ListItem>
 						</List>
 					</Drawer>
