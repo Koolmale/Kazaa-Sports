@@ -5,24 +5,28 @@ import '../styles/videos.css'
 import useStyles from '../styles/style'
 import classNames from 'classnames'
 
-function Videos(props) {
+function Videos({ links, styles }) {
 	const classes = useStyles()
-	
-	return (
-		<Element name='videos'>
-			<div className={classNames('videos', classes.header)}>
-				<div className='title'> Videos </div>
 
-				{props.links.videos.map(url => (
-					<ReactPlayer
-						url={url}
-						controls={true}
-						className='video'
-						{...props.styles}
-					/>
-				))}
-			</div>
-		</Element>
+	return (
+		<>
+			{links.videos.map(({ name: sectionName, links: sectionLinks }) => (
+				<Element name={sectionName}>
+					<div className={classNames('videos', classes.header)}>
+						<div className='title'> {sectionName} </div>
+
+						{sectionLinks.map(url => (
+							<ReactPlayer
+								url={url}
+								controls={true}
+								className='video'
+								{...styles}
+							/>
+						))}
+					</div>
+				</Element>
+			))}
+		</>
 	)
 }
 

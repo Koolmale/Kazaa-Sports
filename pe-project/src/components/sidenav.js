@@ -95,7 +95,7 @@ const useStyles = makeStyles(theme => ({
 	},
 }))
 
-export default function MiniDrawer() {
+export default function SideNav(props) {
 	const classes = useStyles()
 	const [open, setOpen] = React.useState(false)
 

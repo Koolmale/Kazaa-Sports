@@ -1,7 +1,7 @@
 import React from 'react'
 import SideNav from '../components/sidenav'
 import { Element } from 'react-scroll'
-import {Videos, Skills} from '../components/videos'
+import Videos from '../components/videos'
 import { useTheme } from '@material-ui/core/styles'
 import useStyles from '../styles/style'
 import classNames from 'classnames'
@@ -42,10 +42,6 @@ export default function SportsPageTemplate({ children, title, links }) {
 					styles={{ width: '50vw', height: '28.125vw' }}
 				/>
 
-				<Skills
-					links={links}
-					styles={{ width: '50vw', height: '28.125vw' }}
-				/>	
 			</div>
 		</div>
 	)
