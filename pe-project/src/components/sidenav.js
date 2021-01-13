@@ -191,7 +191,7 @@ export default function MiniDrawer() {
 
 							<ListItem
 								button
-								onClick={() => ScrollDown('videos')}
+								onClick={() => ScrollDown('skills')}
 							>
 								<ListItemIcon>
 									<SportsSoccerIcon />
