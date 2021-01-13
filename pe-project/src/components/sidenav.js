@@ -14,11 +14,11 @@ import ListItemText from '@material-ui/core/ListItemText'
 import DescriptionIcon from '@material-ui/icons/Description'
 import YouTubeIcon from '@material-ui/icons/YouTube'
 import SportsIcon from '@material-ui/icons/Sports'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { scroller } from 'react-scroll'
 import HideOnScroll from '../components/hideOnScroll'
-import SportsOutlinedIcon from '@material-ui/icons/SportsOutlined';
-import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
+import SportsOutlinedIcon from '@material-ui/icons/SportsOutlined'
+import SportsSoccerIcon from '@material-ui/icons/SportsSoccer'
 
 const drawerWidth = 240
 
@@ -95,9 +95,22 @@ const useStyles = makeStyles(theme => ({
 	},
 }))
 
-export default function SideNav(props) {
+const initialSections = ['Articles', 'Tutorials']
+
+export default function SideNav({ videos: videosJSON }) {
 	const classes = useStyles()
 	const [open, setOpen] = React.useState(false)
+	const [sections, setSections] = React.useState(initialSections)
+
+	React.useEffect(() => {
+		//to make sure if component reloads it doesnt keep on concatenating, so we reset state before
+		setSections(initialSections)
+		setSections(
+			initialSections.concat(
+				videosJSON.videos.map(videoSection => videoSection.name)
+			)
+		)
+	}, [videosJSON])
 
 	function ScrollDown(name) {
 		scroller.scrollTo(name, {
@@ -137,67 +150,20 @@ export default function SideNav(props) {
 						</div>
 						<Divider />
 						<List>
-							<ListItem
-								button
-								onClick={() => ScrollDown('articles')}
-							>
-								<ListItemIcon>
-									<DescriptionIcon />
-								</ListItemIcon>
-								<ListItemText primary='Articles' />
-							</ListItem>
-							<Divider />
-
-							<ListItem
-								button
-								onClick={() => ScrollDown('tutorial')}
-							>
-								<ListItemIcon>
-									<SportsIcon />
-								</ListItemIcon>
-								<ListItemText primary='Tutorial' />
-							</ListItem>
-							<Divider />
-
-							<ListItem
-								button
-								onClick={() => ScrollDown('videos')}
-							>
-								<ListItemIcon>
-									<YouTubeIcon />
-								</ListItemIcon>
-								<ListItemText primary='Videos' />
-							</ListItem>
-							
-							<ListItem
-								button
-								onClick={() => ScrollDown('videos')}
-							>
-								<ListItemIcon>
-									<ExpandMoreIcon />
-								</ListItemIcon>
-								<ListItemText primary='More' />
-							</ListItem>
-
-							<ListItem
-								button
-								onClick={() => ScrollDown('videos')}
-							>
-								<ListItemIcon>
-									<SportsOutlinedIcon />
-								</ListItemIcon>
-								<ListItemText primary='Skills' />
-							</ListItem>
-
-							<ListItem
-								button
-								onClick={() => ScrollDown('skills')}
-							>
-								<ListItemIcon>
-									<SportsSoccerIcon />
-								</ListItemIcon>
-								<ListItemText primary='Dribbling' />
-							</ListItem>
+							{sections.map(section => (
+								<>
+									<ListItem
+										button
+										onClick={() => ScrollDown(section)}
+									>
+										<ListItemIcon>
+											<DescriptionIcon />
+										</ListItemIcon>
+										<ListItemText primary={section} />
+									</ListItem>
+									<Divider />
+								</>
+							))}
 						</List>
 					</Drawer>
 				</HideOnScroll>
