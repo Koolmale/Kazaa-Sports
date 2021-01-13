@@ -9,7 +9,9 @@
 				"https://www.youtube.com/watch?v=szK7S8KmsWM",
 				"https://www.youtube.com/watch?v=WIHy-ZnSndA",
 				"https://www.youtube.com/watch?v=R1Bd27oWCNs",
-				"https://www.youtube.com/watch?v=9JHs7IZz_a4"
+				"https://www.youtube.com/watch?v=9JHs7IZz_a4",
+				"https://youtu.be/aiXLvNyh-Ho",
+				"https://youtu.be/vzNUH11jGLA"
 			]
 		},
 		{
@@ -20,8 +22,26 @@
 				"https://www.youtube.com/watch?v=Tg1RPoXBCNk",
 				"https://www.youtube.com/watch?v=nM-Z3axdxUg",
 				"https://www.youtube.com/watch?v=apPvCeUK1VE",
-				"https://www.youtube.com/watch?v=yq3-S1JCytA"
+				"https://www.youtube.com/watch?v=yq3-S1JCytA",
+				"https://youtu.be/tXOZS3AKKOw",
+				"https://youtu.be/7HqGCwt4F1I"
 			]
-		}
+		},
+		{
+			"name": "Cardio",
+			"links": [
+				"https://youtu.be/FuZGiKYS2u4",
+				"https://youtu.be/8ortypveAL0",
+				"https://youtu.be/xI9xtXoaNv0"
+			]
+		},
+		{
+			"name": "Tabata",
+			"links": [
+				"https://youtu.be/xI9xtXoaNv0",
+				"https://youtu.be/Ezm11Oxc7FA",
+				"https://youtu.be/D7oV4wXMUws"
+			]
+		}			
 	]
 }
