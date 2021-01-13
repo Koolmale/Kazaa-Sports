@@ -96,7 +96,7 @@ const initialSections = [
 		icon: 'Description',
 	},
 	{
-		name: 'Tutorials',
+		name: 'Tutorial',
 		icon: 'Sports',
 	},
 ]
