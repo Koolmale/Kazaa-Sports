@@ -10,7 +10,7 @@ import classNames from 'classnames'
 
 export function Tutorial({children}) {
     return (
-		<Element name='tutorial'>
+		<Element name='Tutorial'>
             {children}
 		</Element>
 	)
@@ -29,9 +29,9 @@ export default function SportsPageTemplate({ children, title, links }) {
 				color: theme.palette.text.main,
 			}}
 		>
-			<SideNav />
+			<SideNav videos={links}/>
 			<div id='body'>
-				<Element name='articles'>
+				<Element name='Articles'>
 					<h1 className={classNames('title', classes.header)}>
 						{title}
 					</h1>
