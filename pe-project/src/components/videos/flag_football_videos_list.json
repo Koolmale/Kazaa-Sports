@@ -13,6 +13,7 @@
 		},
 		{
 			"name": "QB",
+			"icon": "SportsFootball",
 			"links": [
 				"https://youtu.be/CUufsMzrGbQ",
 				"https://youtu.be/0pPOsQZ_LBQ",
@@ -21,6 +22,7 @@
 		},
 		{
 			"name": "WR",
+			"icon": "DirectionsRun",
 			"links": [
 				"https://youtu.be/kpkIJ13sTJY",
 				"https://youtu.be/gcL-xjCi6qo",
@@ -30,6 +32,7 @@
 		},
 		{
 			"name": "Defense",
+			"icon": "SportsHandball",
 			"links": [
 				"https://youtu.be/XfrLXQ3Oob0",
 				"https://youtu.be/jHUy44i1Pog"

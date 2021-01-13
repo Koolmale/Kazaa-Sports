@@ -29,19 +29,15 @@
 		},
 		{
 			"name": "Cardio",
+			"icon": "Timer",
 			"links": [
 				"https://youtu.be/FuZGiKYS2u4",
 				"https://youtu.be/8ortypveAL0",
-				"https://youtu.be/xI9xtXoaNv0"
-			]
-		},
-		{
-			"name": "Tabata",
-			"links": [
+				"https://youtu.be/xI9xtXoaNv0",
 				"https://youtu.be/xI9xtXoaNv0",
 				"https://youtu.be/Ezm11Oxc7FA",
 				"https://youtu.be/D7oV4wXMUws"
 			]
-		}			
+		}	
 	]
 }

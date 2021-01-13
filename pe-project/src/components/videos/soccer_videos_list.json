@@ -14,6 +14,7 @@
 		},
 		{
 			"name": "Fundamentals",
+			"icon": "SportsSoccer",
 			"links": [
 				"https://youtu.be/Kmx0lwCl0L8",
 				"https://youtu.be/fcHJJ1SnwSk",
@@ -27,6 +28,7 @@
 		},
 		{
 			"name": "Skills",
+			"icons": "DirectionsRun",
 			"links": [
 				"https://youtu.be/Sdv6Y1tqE4U",
 				"https://youtu.be/NMfLJynwyTk",
@@ -38,6 +40,7 @@
 		},
 		{
 			"name": "Shooting",
+			"icon": "Speed",
 			"links": [
 				"https://youtu.be/RE9lBLcf3NQ",
 				"https://youtu.be/8ZtAPe10hSU",
