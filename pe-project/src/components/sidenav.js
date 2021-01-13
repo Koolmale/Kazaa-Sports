@@ -153,7 +153,7 @@ export default function SideNav({ videos: videosJSON }) {
 							{sections.map(({ name, icon }) => {
 								//second is default icon in case icon doesnt exist
 								const IconComponent =
-									Icons[icon] || Icons.Apps
+									Icons[icon] ?? Icons.Apps
 		
 								return (
 									<>
