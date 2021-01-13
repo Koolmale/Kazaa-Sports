@@ -2,6 +2,7 @@
 	"videos": [
 		{
 			"name": "Workout",
+			"icon": "AccessAlarm",
 			"links": [
 				"https://www.youtube.com/watch?v=Gze8oMuj4as",
 				"https://www.youtube.com/watch?v=g4exVUZlERo",
@@ -15,6 +16,7 @@
 		},
 		{
 			"name": "Training",
+			"icon": "SportsFootball",
 			"links": [
 				"https://www.youtube.com/watch?v=sYYjx_W7rUY",
 				"https://www.youtube.com/watch?v=Tg1RPoXBCNk",

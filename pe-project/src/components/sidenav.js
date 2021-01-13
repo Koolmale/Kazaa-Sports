@@ -11,14 +11,9 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import DescriptionIcon from '@material-ui/icons/Description'
-import YouTubeIcon from '@material-ui/icons/YouTube'
-import SportsIcon from '@material-ui/icons/Sports'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { scroller } from 'react-scroll'
 import HideOnScroll from '../components/hideOnScroll'
-import SportsOutlinedIcon from '@material-ui/icons/SportsOutlined'
-import SportsSoccerIcon from '@material-ui/icons/SportsSoccer'
+import * as Icons from '@material-ui/icons'
 
 const drawerWidth = 240
 
@@ -76,9 +71,9 @@ const useStyles = makeStyles(theme => ({
 			duration: theme.transitions.duration.leavingScreen,
 		}),
 		overflowX: 'hidden',
-		width: theme.spacing(7) + 1,
+		width: theme.spacing(7),
 		[theme.breakpoints.up('sm')]: {
-			width: theme.spacing(9) + 1,
+			width: theme.spacing(9),
 		},
 	},
 	toolbar: {
@@ -95,7 +90,16 @@ const useStyles = makeStyles(theme => ({
 	},
 }))
 
-const initialSections = ['Articles', 'Tutorials']
+const initialSections = [
+	{
+		name: 'Articles',
+		icon: 'Description',
+	},
+	{
+		name: 'Tutorials',
+		icon: 'Sports',
+	},
+]
 
 export default function SideNav({ videos: videosJSON }) {
 	const classes = useStyles()
@@ -105,11 +109,7 @@ export default function SideNav({ videos: videosJSON }) {
 	React.useEffect(() => {
 		//to make sure if component reloads it doesnt keep on concatenating, so we reset state before
 		setSections(initialSections)
-		setSections(
-			initialSections.concat(
-				videosJSON.videos.map(videoSection => videoSection.name)
-			)
-		)
+		setSections(initialSections.concat(videosJSON.videos))
 	}, [videosJSON])
 
 	function ScrollDown(name) {
@@ -150,20 +150,26 @@ export default function SideNav({ videos: videosJSON }) {
 						</div>
 						<Divider />
 						<List>
-							{sections.map(section => (
-								<>
-									<ListItem
-										button
-										onClick={() => ScrollDown(section)}
-									>
-										<ListItemIcon>
-											<DescriptionIcon />
-										</ListItemIcon>
-										<ListItemText primary={section} />
-									</ListItem>
-									<Divider />
-								</>
-							))}
+							{sections.map(({ name, icon }) => {
+								//second is default icon in case icon doesnt exist
+								const IconComponent =
+									Icons[icon] ?? Icons.Apps
+		
+								return (
+									<>
+										<ListItem
+											button
+											onClick={() => ScrollDown(name)}
+										>
+											<ListItemIcon>
+												<IconComponent />
+											</ListItemIcon>
+											<ListItemText primary={name} />
+										</ListItem>
+										<Divider />
+									</>
+								)
+							})}
 						</List>
 					</Drawer>
 				</HideOnScroll>
