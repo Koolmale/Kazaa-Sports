@@ -7,48 +7,18 @@ function Soccer() {
 		<SportsPageTemplate title='Soccer' links={links}>
 			<div className='paragraph-container'>
 				<div className='paragraph'>
-					Association football, more commonly known as football or
-					soccer[a] (originally also spelled foot-ball), is a team
-					sport played with a spherical ball between two teams of 11
-					players. It is played by approximately 250 million players
-					in over 200 countries and dependencies, making it the
-					world's most popular sport. The game is played on a
-					rectangular field called a pitch with a goal at each end.
-					The object of the game is to outscore the opposition by
-					moving the ball beyond the goal line into the opposing goal.
-					The team with the higher number of goals wins the game.
-					<br />
-					<a
-						className='link'
-						href='https://en.wikipedia.org/wiki/Association_football'
-						target='_blank'
-						rel='noreferrer'
-					>
-						Source
-					</a>
+				Soccer, or better known as football, is a team sport played with a spherical ball between two teams of 11 players. The game is played on a rectangular field called a pitch with a goal at each end. The goal of soccer is to move the ball beyond the goal line into the opposing goal and score more than the other team.  The team with the higher number of goals wins the game. It is the biggest sport on the planet, played by approximately 250 million players in over 200 countries and dependencies. From slums to high-rises, cities to suburbs, its played everywhere.
+				<br />
 				</div>
 
 				<div className='paragraph'>
-					Football is played in accordance with a set of rules known
-					as the Laws of the Game. The ball is 68–70 cm (27–28 in) in
-					circumference and known as the football. The two teams each
-					compete to get the ball into the other team's goal (between
-					the posts and under the bar), thereby scoring a goal. The
-					team that has scored more goals at the end of the game is
-					the winner; if both teams have scored an equal number of
-					goals then the game is a draw. Each team is led by a captain
-					who has only one official responsibility as mandated by the
-					Laws of the Game: to represent their team in the coin toss
-					prior to kick-off or penalty kicks.
-					<br />
-					<a
-						className='link'
-						href='https://en.wikipedia.org/wiki/Association_football'
-						target='_blank'
-						rel='noreferrer'
-					>
-						Source
-					</a>
+				There are a few major leagues for soccer across the globe, some being La Liga, The English Premeire League, MLS, and Bundesliga. Every 4 years, national teams come to compete in the FIFA World Cup, the most watched sporting event on the planet. Some of the top competitors include Argentina, Brazil, Germany, France, Egypt, Belgium, Spain, and Portugal, among others.
+				<br />
+				</div>
+
+				<div className='paragraph'>
+				Laws of the Game: The ball is 68–70 cm (27–28 in) in circumference and known as the football. The two teams each compete to get the ball into the other team's goal, which size depends on the level, and anywhere between the posts and under the bar. The team that has scored more goals at the end of the game is the winner, but if both teams have scored an equal number of goals then the game is a draw. The captains need to represent their team in the coin toss prior to kick-off or penalty kicks. Each team is led by a captain. The other players on the field consist of a Goalie, defenders, midfielders, stoppers, wingers, and strikers, among others.
+				<br />
 				</div>
 
 				<Tutorial>
