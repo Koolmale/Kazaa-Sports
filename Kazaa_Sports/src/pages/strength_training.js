@@ -23,39 +23,46 @@ function StrengthTraining() {
 	const classes = useStyles()
 
 	return (
-		<SportsPageTemplate title='Strength Training 101: How to Get Started' links = {links} websiteLinks = {websiteLinks} youtubeLinks = {youtubeLinks}>
-
+		<SportsPageTemplate
+			title='Strength Training 101: How to Get Started'
+			links={links}
+			websiteLinks={websiteLinks}
+			youtubeLinks={youtubeLinks}
+		>
 			<div className='paragraph-container'>
 				<p className='paragraph'>
-					If you want to kick your fitness routine up a notch,
-					consider giving the treadmill a break and showing the loaded
-					barbells some love. You’ll still sweat those calories off
-					with the added benefit of toning your body. But what is
-					strength training, exactly? To put it simply, strength
-					training (a.k.a. resistance training) involves using your
-					own bodyweight or tools, like dumbbells or resistance bands,
-					to build muscle mass, strength, and endurance.
+					If you want to take your fitness to the next level, try
+					staying off the good old treadmill and trying out the
+					barbells instead. You will lose all the same calories, but
+					you will also tone your body in shape. Strength training,
+					everyone's favorite! But what exactly is it? Well, strength
+					training, also known as resistance training, is when you use
+					your own bodyweight or tools such as dumbbells, barbells, or
+					resistance bands, so that you can build muscle mass,
+					strength, and endurance.
 				</p>
 
 				<p className='paragraph'>
-					If you’re new to the weight room, getting started might seem
-					a little intimidating, but implementing strength training
-					into your fitness routine doesn’t mean you have to
-					completely say bye to your preferred workout. You can start
-					by practicing resistance training just a few times a week,
-					says Sarah Revenig, CSCS, trainer at Soho Strength Lab. “As
-					you adapt, you can increase your frequency of training.”
+					If you're new to it, it might seem a big intimidating to get
+					started. But incorporating strength training into the
+					workout routine you already have can be incremental and
+					simple, you don't have to completely replace it. For
+					starters, you can practice resistance training a couple
+					times per week, according to Sarah Revenig CSCS, trainer at
+					Soho Strength Lab. “As you adapt, you can increase your
+					frequency of training".
 				</p>
 
 				<p className='paragraph'>
-					It usually takes a few weeks to start seeing results, but
-					strength training is a sure way to build rock-solid abs,
-					load up on your booty gains, or seriously sculpt that part
-					of your body you’ve been determined to tone up. It also
-					keeps your system burning calories even long after you’ve
-					left the gym, a benefit that makes strength training worth
-					it for those with weight loss goals. Here’s a quick guide on
-					strength training for those ready to get started.
+					At first, it may take a couple weeks to see the initial
+					results, but do not doubt, as strength training is one of
+					the best ways to build the abs you've always wanted, or tone
+					a part of your body. Additionally, it keeps your body
+					burning calories even after you have left the gym and
+					stopped the workout. This benefit makes strength training a
+					superb option for those with weight loss goals. Enough talk,
+					here is a quick guide for you to get started on strength
+					training.
 				</p>
 
 				<Tutorial>
