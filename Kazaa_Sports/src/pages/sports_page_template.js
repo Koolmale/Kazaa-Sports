@@ -5,7 +5,6 @@ import Videos from '../components/videos'
 import { useTheme } from '@material-ui/core/styles'
 import useStyles from '../styles/style'
 import classNames from 'classnames'
-<<<<<<< HEAD
 import { makeStyles } from '@material-ui/core/styles'
 import List from '@material-ui/core/List'
 import Link from '@material-ui/core/Link'
@@ -89,20 +88,10 @@ function References({ ReferencesList }) {
 					<ReferenceSublist section={section} classes={classes} />
 				))}
 			</List>
-=======
-
-
-
-export function Tutorial({children}) {
-    return (
-		<Element name='Tutorial'>
-            {children}
->>>>>>> f28fd1ca6ed87297bc6e07450159944f409cebcc
 		</Element>
 	)
 }
 
-<<<<<<< HEAD
 
 
 export default function SportsPageTemplate({
@@ -143,12 +132,6 @@ export default function SportsPageTemplate({
 			icon: 'LibraryBooks',
 		},
 	]
-=======
-export default function SportsPageTemplate({ children, title, links }) {
-	const theme = useTheme()
-	const classes = useStyles()
-
->>>>>>> f28fd1ca6ed87297bc6e07450159944f409cebcc
 
 	return (
 		<div
@@ -158,11 +141,7 @@ export default function SportsPageTemplate({ children, title, links }) {
 				color: theme.palette.text.main,
 			}}
 		>
-<<<<<<< HEAD
 			<SideNav sections={Sections} />
-=======
-			<SideNav videos={links}/>
->>>>>>> f28fd1ca6ed87297bc6e07450159944f409cebcc
 			<div id='body'>
 				<Element name='Articles'>
 					<h1 className={classNames('title', classes.header)}>
@@ -172,23 +151,10 @@ export default function SportsPageTemplate({ children, title, links }) {
 				{children}
 				<Videos
 					links={links}
-<<<<<<< HEAD
 					styles={{ width: '75vw', height: '42.1875vw' }}
 				/>
 				<References ReferencesList={referenceLinks} />
-=======
-					styles={{ width: '50vw', height: '28.125vw' }}
-				/>
-
->>>>>>> f28fd1ca6ed87297bc6e07450159944f409cebcc
 			</div>
 		</div>
 	)
 }
-<<<<<<< HEAD
-=======
-
-SportsPageTemplate.defaultProps = {
-
-}
->>>>>>> f28fd1ca6ed87297bc6e07450159944f409cebcc

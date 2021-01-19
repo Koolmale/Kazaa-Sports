@@ -4,7 +4,6 @@ import classNames from 'classnames'
 import SportsPageTemplate, { Tutorial } from './sports_page_template'
 import useStyles from '../styles/style'
 
-<<<<<<< HEAD
 const websiteLinks = [
 	'https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/strength-training/art-20046670',
 	'https://www.healthline.com/health/exercise-fitness/strength-training-at-home',
@@ -20,17 +19,11 @@ const youtubeLinks = [
 	'https://www.youtube.com/user/heatherrobertsoncom'
 ]
 
-=======
->>>>>>> f28fd1ca6ed87297bc6e07450159944f409cebcc
 function StrengthTraining() {
 	const classes = useStyles()
 
 	return (
-<<<<<<< HEAD
 		<SportsPageTemplate title='Strength Training 101: How to Get Started' links = {links} websiteLinks = {websiteLinks} youtubeLinks = {youtubeLinks}>
-=======
-		<SportsPageTemplate title='Strength Training 101: How to Get Started' links = {links}>
->>>>>>> f28fd1ca6ed87297bc6e07450159944f409cebcc
 
 			<div className='paragraph-container'>
 				<p className='paragraph'>
