@@ -1,0 +1,83 @@
+#body {
+	margin: 0px auto;
+	width: 70vw;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5rem;
+	line-height: 1.8rem;
+	scroll-behavior: smooth;
+}
+
+@media(max-width: 850px){
+	#body {
+		width: 80vw;
+	}
+}
+
+#sports-page-container{
+	transition: all 2s linear;
+}
+
+
+h1 {
+	line-height: 2rem;
+}
+
+*::selection {
+	background-color: rgb(195, 124, 243);
+}
+
+#body div {
+	align-self: center;
+}
+
+p + p {
+	text-indent: 2em;
+	margin: 4vh 0;
+}
+
+.mw-empty-elt {
+	color: #202122;
+	font-size: calc(1em * 0.875);
+	line-height: 1.6;
+	direction: ltr;
+	margin: 0.5em 0;
+	display: none;
+}
+
+p {
+	font-family: 'Maven Pro', sans-serif;
+}
+
+.title {
+	font-size: 3.5rem;
+	line-height: 1;
+	margin-bottom: 0.9375rem;
+	letter-spacing: -0.05rem;
+	font-weight: 700;
+	text-align: center;
+	margin-top: 5vh;
+}
+
+.subtitle {
+	text-align: center;
+	margin-top: 8vh;
+	font-size: 2.5rem;
+}
+
+.paragraph {
+	margin: 5vh 10vw;
+	text-indent: 2vw;
+}
+
+.body-ul li {
+	margin: 5vh 10vw;
+}
+
+.rules-container {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	text-align: left;
+	margin-bottom: 10vh;
+}

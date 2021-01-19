@@ -1,0 +1,15 @@
+
+.img img {
+    width: 50vmax;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    margin: 2vh;
+}
