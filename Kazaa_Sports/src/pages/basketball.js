@@ -1,6 +1,6 @@
 import React from 'react'
 import links from '../components/videos/basket_ball_videos_list.json'
-import SportsPageTemplate, { Tutorial } from './sports_page_template'
+import SportsPageTemplate, { Tutorial } from '../components/sports_page_template'
 
 function Basketball() {
 	return (

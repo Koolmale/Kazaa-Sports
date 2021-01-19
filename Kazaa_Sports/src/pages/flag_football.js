@@ -1,6 +1,6 @@
 import React from 'react'
 import links from '../components/videos/flag_football_videos_list.json'
-import SportsPageTemplate, { Tutorial } from './sports_page_template'
+import SportsPageTemplate, { Tutorial } from '../components/sports_page_template'
 
 function FlagFootball() {
 	return (
