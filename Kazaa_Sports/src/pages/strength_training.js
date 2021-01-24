@@ -8,8 +8,10 @@ const websiteLinks = [
 	'https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/strength-training/art-20046670',
 	'https://www.healthline.com/health/exercise-fitness/strength-training-at-home',
 	'https://www.verywellfit.com/complete-beginners-guide-to-strength-training-1229585',
+	'https://www.womenshealthmag.com/fitness/a30522035/what-is-strength-training/',
 	'https://www.nbcnews.com/better/lifestyle/30-day-strength-training-routine-no-equipment-required-ncna988936',
 	'https://www.webmd.com/fitness-exercise/ss/slideshow-start-strength-training',
+
 ]
 const youtubeLinks = [
 	'https://www.youtube.com/user/KozakSportsPerform',
